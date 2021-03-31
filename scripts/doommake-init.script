@@ -1,0 +1,18 @@
+/****************************************************************************
+ * DoomMake Project Init Script
+ ****************************************************************************/
+
+/**
+ * Performs project initialization.
+ * Usually used for downloading dependencies or other setup.
+ *
+ * If you don't intend for this method to do the same thing every full make,
+ * employ some kind of "one-time-only" mechanism here.
+ */
+function doInit(args) {
+
+	// ---------------------------------------------------
+	// If this project needs initial setup, do it here.
+	// ---------------------------------------------------
+
+}

@@ -1,0 +1,13 @@
+# ===========================================================================
+# WadMerge Script for Release
+# ===========================================================================
+
+create out
+datemarker out __VER__
+mergefile  out src/wadinfo.txt
+mergefile  out src/credits.txt
+mergefile  out $0/$2
+mergewad   out $0/$3
+
+finish out $0/$1
+end

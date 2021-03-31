@@ -1,0 +1,87 @@
+===========================================================================
+Advanced engine needed  : DSDA-Doom, Eternity, GZDoom, or Doom Retro
+Primary purpose         : Everything! 'Tis a gameplay mod.
+===========================================================================
+Title                   : Vesper
+Filename                : xa-vesper.wad
+Release date            : [TBD]
+Author                  : Xaser Acheron
+Email Address           : xaser.88@gmail.com
+Other Files By Author   : https://doomwiki.org/wiki/Xaser
+Misc. Author Info       : I AM A XASER
+
+Description             : [XA] TODO: description
+
+Additional Credits to   : [TBD]
+
+===========================================================================
+* What is included *
+
+New levels              : None ('tis a gameplay mod)
+Sounds                  : Yes
+Music                   : Yes
+Graphics                : Yes
+Dehacked/BEX Patch      : Yes
+Demos                   : Yes
+Other                   : 
+Other files required    : 
+
+===========================================================================
+* Play Information *
+
+Game                    : Doom / Doom 2 / Heretic ... etc.
+Map #                   : EXMY / MAPXX ...
+Single Player           : Designed for / Player Starts Only / No
+Cooperative 2-4 Player  : Designed for / Player Starts Only / No
+Deathmatch 2-4 Player   : Designed for / Player Starts Only / No
+Other game styles       : 
+Difficulty Settings     : Not implemented / Yes
+
+===========================================================================
+* Copyright / Permissions *
+
+The SOURCE CODE for this mod is under the MIT License (full text below).
+As such, authors MAY use code from this project as a base for modification
+or reuse. Credit is always appreciated as a courtesy, of course.
+
+For everything else, checkout the Credits section above. For "hey can I
+use this resource?" questions, the usual quasi-fair-use excuses apply.
+The Xaser-person will not gripe at you for yoinking misc. resources from
+this mod, but holds no responsibility if anyone else does. :P
+
+You MAY distribute this file, provided you include this text file, with no
+modifications.  You may distribute this file in any electronic format (BBS,
+Diskette, CD, actually-modern methods like the friggin' internet, etc) as
+long as you include this file intact.
+
+===========================================================================
+* MIT License (applies to SOURCE CODE only) *
+
+Copyright (c) 2021 Xaser Acheron
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===========================================================================
+* Where to get the file that this text file describes *
+
+https://static.angryscience.net/pub/doom/mods/vesper/
+https://www.doomworld.com/idgames (somewhere in here)
+HELL
+SUPER HELL
+heaven, maybe? idk i've never been

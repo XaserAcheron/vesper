@@ -1,0 +1,10 @@
+/*****************************************************************************
+ * vesper - decohack - root
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+#include "classpath:decohack/extended.dh"
+#include "classpath:decohack/constants/friendly_things.dh"
+
+// [XA] TODO: create the universe :P
