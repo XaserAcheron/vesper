@@ -6,5 +6,8 @@
 
 #include "classpath:decohack/extended.dh"
 #include "classpath:decohack/constants/friendly_things.dh"
+#include "defines.dh"
 
-// [XA] TODO: create the universe :P
+#include "info/strings.dh"
+
+#include "actors/weapons/spiker.dh"

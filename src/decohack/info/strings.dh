@@ -1,0 +1,10 @@
+/*****************************************************************************
+ * vesper - decohack - stringalings
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+strings
+{
+	STR_GOTCHAINGUN "You got the heavy spiker!"
+}

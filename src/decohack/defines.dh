@@ -1,0 +1,42 @@
+/*****************************************************************************
+ * vesper - decohack - defines
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+// ==============
+// sprite aliases
+// ==============
+
+#define SPK1 SP00
+#define SPK2 SP01
+
+// ==============
+// dehnums
+// ==============
+
+#define DEHNUM_SPIKE_SHOT_SINGLE  151
+#define DEHNUM_SPIKE_SHOT_DOUBLE  152
+#define DEHNUM_SPIKE_TRAIL_SINGLE 153
+#define DEHNUM_SPIKE_TRAIL_DOUBLE 154
+
+// ==============
+// sound aliases
+// ==============
+
+#define DSSPIKE1 "fre000"
+#define SND_SPIKE1 500
+#define DSSPIKE2 "fre001"
+#define SND_SPIKE2 501
+#define DSSPKFIR "fre002"
+#define SND_SPKFIR 502
+#define DSSPKHIT "fre003"
+#define SND_SPKHIT 503
+
+// ==============
+// balance tweaks
+// ==============
+
+#define SPIKE_VELOCITY 30
+#define SPIKE_SINGLE_DAMAGE 4
+#define SPIKE_DOUBLE_DAMAGE 8
