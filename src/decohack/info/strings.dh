@@ -6,5 +6,37 @@
 
 strings
 {
+//	STR_GOTCHAINSAW "A chainsaw!  Find some meat!"
+//	STR_GOTSHOTGUN  "You got the shotgun!"
+//	STR_GOTSHOTGUN2 "You got the super shotgun!"
 	STR_GOTCHAINGUN "You got the heavy spiker!"
+//	STR_GOTLAUNCHER "You got the rocket launcher!"
+//	STR_GOTPLASMA   "You got the plasma gun!"
+//	STR_GOTBFG9000  "You got the BFG9000!  Oh, yes."
+	
+	STR_GOTCLIP     "Picked up a nail magazine."
+	STR_GOTCLIPBOX  "Picked up a box of nails."
+//	STR_GOTROCKET   "Picked up a rocket."
+//	STR_GOTROCKBOX  "Picked up a box of rockets."
+//	STR_GOTCELL     "Picked up an energy cell."
+//	STR_GOTCELLBOX  "Picked up an energy cell pack."
+//	STR_GOTSHELLS   "Picked up 4 shotgun shells."
+//	STR_GOTSHELLBOX "Picked up a box of shotgun shells."
+
+	STR_GOTSTIM     "Picked up a first aid kit."
+	STR_GOTMEDIKIT  "Picked up a trauma kit."
+	STR_GOTMEDINEED "Picked up a trauma kit that you REALLY need!"
+	STR_GOTHTHBONUS "Picked up a bottle of painkillers."
+//	STR_GOTARMBONUS "Picked up an armor bonus."
+//	STR_GOTARMOR    "Picked up the armor."
+//	STR_GOTMEGA     "Picked up the MegaArmor!"
+
+//	STR_GOTSUPER    "Supercharge!"
+//	STR_GOTINVUL    "Invulnerability!"
+	STR_GOTBERSERK  "Hyper-Steroids!"
+//	STR_GOTINVIS    "Partial Invisibility"
+//	STR_GOTSUIT     "Radiation Shielding Suit"
+	STR_GOTMAP      "Holomap!"
+//	STR_GOTVISOR    "Light Amplification Visor"
+//	STR_GOTMSPHERE  "MegaSphere!"
 }

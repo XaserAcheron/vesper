@@ -1,0 +1,15 @@
+/*****************************************************************************
+ * vesper - decohack - go to health
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+thing MTF_HEALTH_BONUS "PILLS HERE"
+{
+	states
+	{
+	spawn:
+		BON1 A 1
+		loop
+	}
+}

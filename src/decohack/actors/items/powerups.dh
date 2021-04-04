@@ -1,0 +1,15 @@
+/*****************************************************************************
+ * vesper - decohack - power it right the hell up
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+thing MTF_COMPUTERMAP "Holomap"
+{
+	states
+	{
+	spawn:
+		PMAP AB 1 Bright
+		loop
+	}
+}
