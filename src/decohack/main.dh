@@ -8,7 +8,9 @@
 #include "classpath:decohack/constants/friendly_things.dh"
 #include "defines.dh"
 
+#include "info/ammo.dh"
 #include "info/strings.dh"
+#include "info/misc.dh"
 
 #include "actors/weapons/eagle.dh"
 #include "actors/weapons/spiker.dh"
