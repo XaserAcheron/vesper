@@ -24,6 +24,9 @@
 // sound aliases
 // ==============
 
+#define DSMAGNUM "fre004"
+#define SND_MAGNUM 504
+
 #define DSSPIKE1 "fre000"
 #define SND_SPIKE1 500
 #define DSSPIKE2 "fre001"
@@ -36,6 +39,9 @@
 // ==============
 // balance tweaks
 // ==============
+
+#define MAGNUM_DAMAGE 15
+#define MAGNUM_SPREAD 0.0
 
 #define SPIKE_VELOCITY 30
 #define SPIKE_SINGLE_DAMAGE 4
