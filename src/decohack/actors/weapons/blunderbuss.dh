@@ -1,0 +1,104 @@
+/*****************************************************************************
+ * vesper - decohack - blunderbuss
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+weapon WP_SHOTGUN free states
+weapon WP_SHOTGUN "Blunderbuss"
+{
+	ammotype AM_SHELL
+	clear states
+	states
+	{
+		ready:
+			SHTG A 1 A_WeaponReady
+			wait
+		deselect:
+			SHTG A 0 A_Lower
+			SHTG A 1 A_Lower
+			loop
+		select:
+			SHTG A 0 A_Raise
+			SHTG A 1 A_Raise
+			loop
+		fire:
+			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_3, -BLUNDERBUSS_SHOT_3_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_2, -BLUNDERBUSS_SHOT_2_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_1,  BLUNDERBUSS_SHOT_1_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_2,  BLUNDERBUSS_SHOT_2_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_3,  BLUNDERBUSS_SHOT_3_ANGLE)
+			SHTF A 0 Bright A_ConsumeAmmo
+			SHTF A 0 Bright A_WeaponSound(SND_BUSFIR)
+			SHTF A 1 Bright A_GunFlash
+			SHTF B 1 Bright Offset(1, 36)
+			SHTF C 1 Bright Offset(1, 40)
+			SHTF D 2 Offset(1, 42)
+			SHTF E 2 Offset(1, 40)
+			SHTF F 1 Offset(1, 36)
+			SHTG A 1
+			SHTG BC 2
+			SHTG D 3
+			SHTG F 2 A_WeaponSound(SND_BUSCOK)
+			SHTG G 2
+			SHTG H 6
+			SHTG G 2
+			SHTG F 1
+			SHTG DCB 2
+			SHTG A 0 A_ReFire
+			goto ready
+		flash:
+			TNT1 A 3 A_Light1
+			TNT1 A 2 A_Light2
+			goto lightdone
+	}
+}
+
+thing XTF_BLUNDERBUSS_SHOT_1 "Blunderbuss Shot 1"
+{
+	Damage BLUNDERBUSS_SHOT_1_DAMAGE
+	Speed BLUNDERBUSS_SHOT_1_VELOCITY
+	Radius 8
+	Height 11
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+MISSILE
+
+	SeeSound DSBUSPRJ
+	DeathSound DSBUSHIT // das bu'shit!
+
+	states
+	{
+		spawn:
+			BBAL AB 2 Bright
+			loop
+		death:
+			BBXP AB 2 Bright
+			BBXP CDE 3 Bright
+			BBXP F 4 Bright
+			TNT1 A 10
+			stop
+	}
+}
+
+thing XTF_BLUNDERBUSS_SHOT_2 : thing XTF_BLUNDERBUSS_SHOT_1 "Blunderbuss Shot 2"
+{
+	Damage BLUNDERBUSS_SHOT_2_DAMAGE
+	Speed BLUNDERBUSS_SHOT_2_VELOCITY
+
+	states
+	{
+		spawn:
+			BBAL CD 2 Bright
+			loop
+	}
+}
+
+thing XTF_BLUNDERBUSS_SHOT_3 : thing XTF_BLUNDERBUSS_SHOT_2 "Blunderbuss Shot 3"
+{
+	Damage BLUNDERBUSS_SHOT_3_DAMAGE
+	Speed BLUNDERBUSS_SHOT_3_VELOCITY
+
+	SeeSound ""
+}

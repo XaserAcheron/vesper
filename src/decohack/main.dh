@@ -13,6 +13,7 @@
 #include "info/misc.dh"
 
 #include "actors/weapons/eagle.dh"
+#include "actors/weapons/blunderbuss.dh"
 #include "actors/weapons/spiker.dh"
 
 #include "actors/items/health.dh"
