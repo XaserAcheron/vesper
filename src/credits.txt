@@ -3,6 +3,8 @@
 **SPRITES**
 
 TypicalSF (a.k.a. sonik.o.fan)
+- vintage eagle
+- blunderbuss
 - blue gloves
 
 zrrion the insect
@@ -16,3 +18,9 @@ LossForWords
 - PILLS HERE
 - hyper-steroids
 - holomap
+
+ChopBlock224
+- blunderbuss muzzleflash
+
+Raven Software
+- blunderbuss projectile
