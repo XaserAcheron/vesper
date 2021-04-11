@@ -72,11 +72,12 @@ thing DEHNUM_SPIKE_SHOT_SINGLE "Spike Shot (single)"
 {
 	Damage SPIKE_SINGLE_DAMAGE
 	Speed SPIKE_VELOCITY
-	Radius 8
-	Height 11
+	Radius 11
+	Height 8
 
 	+NOBLOCKMAP
 	+NOGRAVITY
+	+DROPOFF
 	+MISSILE
 
 	SeeSound DSSPKFIR

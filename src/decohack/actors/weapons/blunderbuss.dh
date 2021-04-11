@@ -58,11 +58,12 @@ thing XTF_BLUNDERBUSS_SHOT_1 "Blunderbuss Shot 1"
 {
 	Damage BLUNDERBUSS_SHOT_1_DAMAGE
 	Speed BLUNDERBUSS_SHOT_1_VELOCITY
-	Radius 8
-	Height 11
+	Radius 11
+	Height 8
 
 	+NOBLOCKMAP
 	+NOGRAVITY
+	+DROPOFF
 	+MISSILE
 
 	SeeSound DSBUSPRJ
