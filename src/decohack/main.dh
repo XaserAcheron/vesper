@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-#include "classpath:decohack/extended.dh"
+#include "classpath:decohack/mbf21.dh"
 #include "classpath:decohack/constants/friendly_things.dh"
 #include "defines.dh"
 
