@@ -90,6 +90,7 @@ check function doAssets() {
 #define DEFAULT_RUN_SWITCH_FILE "-file"
 #define PROP_RUN_SWITCH_DEH     "doommake.run.switch.deh"
 #define DEFAULT_RUN_SWITCH_DEH  "-deh"
+#define PROP_RUN_ARGS           "doommake.run.args"
 
 /**
  * Calls a port to run this project.
@@ -106,6 +107,7 @@ check function doRun(portType, wadList, dehFile) {
 	iwadSwitch = prop(PROP_RUN_SWITCH_IWAD + portType, DEFAULT_RUN_SWITCH_IWAD);
 	fileSwitch = prop(PROP_RUN_SWITCH_FILE + portType, DEFAULT_RUN_SWITCH_FILE);
 	dehSwitch =  prop(PROP_RUN_SWITCH_DEH + portType, DEFAULT_RUN_SWITCH_DEH);
+	miscArgs =   prop(PROP_RUN_ARGS + portType);
 	
 	if (empty(exepath))
 		return error("NoEXE", "Executable not specified. Requires a property to be set: " + PROP_RUN_EXE + portType);
@@ -141,7 +143,12 @@ check function doRun(portType, wadList, dehFile) {
 		arguments->listadd(dehSwitch);
 		arguments->listadd(dehFile->filecanonpath());
 	}
-	
+
+	if (!empty(miscArgs)) {
+		each (a : strsplit(miscArgs, " "))
+			arguments->listadd(a);
+	}
+
 	return execresult(exec(
 		exepath, arguments, envvars(), exeworkdir, stdout(), stderr(), stdin()
 	));
@@ -256,7 +263,7 @@ check entry assets(args) {
 check entry run(args) {
 
 	wadList = [
-		// Add WADS to run to this list here.
+		getBuildDirectory() + "/" + getProjectWAD()
 	];
 	
 	// Set DEH file here, if any.
