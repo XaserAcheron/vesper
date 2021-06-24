@@ -32,7 +32,7 @@ weapon WP_PISTOL "Vintage Eagle"
 			PISG A 0 A_GunFlash
 			PISG A 0 A_ConsumeAmmo
 			PISG A 0 A_WeaponSound(SND_MAGNUM, 0)
-			PISG A 1 A_WeaponBulletAttack(MAGNUM_DAMAGE, MAGNUM_SPREAD)
+			PISG A 1 A_WeaponBulletAttack(MAGNUM_SPREAD, 0, 1, MAGNUM_DAMAGE)
 			PISG B 1
 			PISG B 1 Offset(1, 36)
 			PISG C 1 Offset(1, 44)
