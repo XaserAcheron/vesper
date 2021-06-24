@@ -42,7 +42,7 @@ weapon WP_CHAINGUN "Heavy Spiker"
 			CHGG A 1 Offset(-1, 38)
 			CHGG A 1 Offset(-1, 40)
 		fire1:
-			CHGG A 0 A_WeaponProjectile(DEHNUM_SPIKE_SHOT_SINGLE, 0.0)
+			CHGG A 0 A_WeaponProjectile(DEHNUM_SPIKE_SHOT_LEFT, 0.0, 0.0, 0.0, -2.0)
 			CHGG A 0 A_ConsumeAmmo(1)
 			CHGG A 0 A_GunFlashTo(weapon WP_CHAINGUN flash1, 0)
 			CHGG A 1 Offset(-1, 44) A_WeaponSound(SND_SPIKE1, 0)
@@ -50,7 +50,8 @@ weapon WP_CHAINGUN "Heavy Spiker"
 			CHGG C 1 Offset(-1, 41)
 			CHGG D 1 Offset(-1, 40)
 		fire2:
-			CHGG A 0 A_WeaponProjectile(DEHNUM_SPIKE_SHOT_DOUBLE, 0.0)
+			CHGG A 0 A_WeaponProjectile(DEHNUM_SPIKE_SHOT_LEFT , 0.0, 0.0, -4.0, -2.0)
+			CHGG A 0 A_WeaponProjectile(DEHNUM_SPIKE_SHOT_RIGHT, 0.0, 0.0,  4.0, -2.0)
 			CHGG A 0 A_ConsumeAmmo(2)
 			CHGG A 0 A_GunFlashTo(weapon WP_CHAINGUN flash2, 0)
 			CHGG A 1 Offset(-1, 44) A_WeaponSound(SND_SPIKE2, 0)
@@ -66,9 +67,9 @@ weapon WP_CHAINGUN "Heavy Spiker"
 	}
 }
 
-thing DEHNUM_SPIKE_SHOT_SINGLE "Spike Shot (single)"
+thing DEHNUM_SPIKE_SHOT_LEFT "Spike Shot (Left)"
 {
-	Damage SPIKE_SINGLE_DAMAGE
+	Damage SPIKE_DAMAGE
 	Speed SPIKE_VELOCITY
 	Radius 11
 	Height 8
@@ -84,30 +85,21 @@ thing DEHNUM_SPIKE_SHOT_SINGLE "Spike Shot (single)"
 	states
 	{
 		spawn:
-			SPK1 A 1 Bright A_Spawn(DEHNUM_SPIKE_TRAIL_SINGLE, 0)
-			loop
+			SPIK A 1 Bright A_Spawn(DEHNUM_SPIKE_TRAIL, 0)
+			wait
 		death:
-			SPK1 BCDEFG 3
+			SPIK B 3 A_AddFlags(TRANSLUCENT, 0)
+			SPIK CDEFG 3
 			stop
 	}
 }
 
-thing DEHNUM_SPIKE_SHOT_DOUBLE : thing DEHNUM_SPIKE_SHOT_SINGLE "Spike Shot (double)"
+thing DEHNUM_SPIKE_SHOT_RIGHT : thing DEHNUM_SPIKE_SHOT_LEFT "Spike Shot (right)"
 {
-	Damage SPIKE_DOUBLE_DAMAGE
-
-	states
-	{
-		spawn:
-			SPK2 A 1 Bright A_Spawn(DEHNUM_SPIKE_TRAIL_DOUBLE, 0)
-			loop
-		death:
-			SPK2 BCDEFG 3
-			stop
-	}
+	SeeSound ""
 }
 
-thing DEHNUM_SPIKE_TRAIL_SINGLE "Spike Trail (single)"
+thing DEHNUM_SPIKE_TRAIL "Spike Trail"
 {
 	Radius 4
 	Height 8
@@ -120,18 +112,7 @@ thing DEHNUM_SPIKE_TRAIL_SINGLE "Spike Trail (single)"
 	{
 	spawn:
 		TNT1 A 1 Bright
-		SPK1 HIJKLMNO 1 Bright
-		stop
-	}
-}
-
-thing DEHNUM_SPIKE_TRAIL_DOUBLE : thing DEHNUM_SPIKE_TRAIL_SINGLE "Spike Trail (double)"
-{
-	states
-	{
-	spawn:
-		TNT1 A 1 Bright
-		SPK2 HIJKLMNO 1 Bright
+		SPIK HIJKLMNO 1 Bright
 		stop
 	}
 }

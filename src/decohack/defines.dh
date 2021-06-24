@@ -8,8 +8,7 @@
 // sprite aliases
 // ==============
 
-#define SPK1 SP00
-#define SPK2 SP01
+#define SPIK SP00
 
 #define BBAL SP02
 #define BBXP SP03
@@ -22,10 +21,9 @@
 #define XTF_BLUNDERBUSS_SHOT_2 156
 #define XTF_BLUNDERBUSS_SHOT_3 157
 
-#define DEHNUM_SPIKE_SHOT_SINGLE  151
-#define DEHNUM_SPIKE_SHOT_DOUBLE  152
-#define DEHNUM_SPIKE_TRAIL_SINGLE 153
-#define DEHNUM_SPIKE_TRAIL_DOUBLE 154
+#define DEHNUM_SPIKE_SHOT_LEFT  151
+#define DEHNUM_SPIKE_SHOT_RIGHT 152
+#define DEHNUM_SPIKE_TRAIL      153
 
 // ==============
 // sound aliases
@@ -70,5 +68,4 @@
 #define BLUNDERBUSS_SHOT_3_VELOCITY 20
 
 #define SPIKE_VELOCITY 30
-#define SPIKE_SINGLE_DAMAGE 4
-#define SPIKE_DOUBLE_DAMAGE 8
+#define SPIKE_DAMAGE 4
