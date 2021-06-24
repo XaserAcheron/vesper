@@ -29,7 +29,7 @@ weapon WP_SHOTGUN "Blunderbuss"
 			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_2,  BLUNDERBUSS_SHOT_2_ANGLE)
 			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_3,  BLUNDERBUSS_SHOT_3_ANGLE)
 			SHTF A 0 Bright A_ConsumeAmmo
-			SHTF A 0 Bright A_WeaponSound(SND_BUSFIR)
+			SHTF A 0 Bright A_WeaponSound(sound DSBUSFIR)
 			SHTF A 1 Bright A_GunFlash
 			SHTF B 1 Bright Offset(1, 36)
 			SHTF C 1 Bright Offset(1, 40)
@@ -39,7 +39,7 @@ weapon WP_SHOTGUN "Blunderbuss"
 			SHTG A 1
 			SHTG BC 2
 			SHTG D 3
-			SHTG F 2 A_WeaponSound(SND_BUSCOK)
+			SHTG F 2 A_WeaponSound(sound DSBUSCOK)
 			SHTG G 2
 			SHTG H 6
 			SHTG G 2

@@ -30,25 +30,16 @@
 // ==============
 
 #define DSMAGNUM "fre004"
-#define SND_MAGNUM 504
 
 #define DSBUSFIR "fre005"
-#define SND_BUSFIR 505
 #define DSBUSPRJ "fre006"
-#define SND_BUSPRJ 506
 #define DSBUSCOK "fre007"
-#define SND_BUSCOK 507
 #define DSBUSHIT "fre008"
-#define SND_BUSHIT 508
 
 #define DSSPIKE1 "fre000"
-#define SND_SPIKE1 500
 #define DSSPIKE2 "fre001"
-#define SND_SPIKE2 501
 #define DSSPKFIR "fre002"
-#define SND_SPKFIR 502
 #define DSSPKHIT "fre003"
-#define SND_SPKHIT 503
 
 // ==============
 // balance tweaks
