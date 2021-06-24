@@ -1,0 +1,27 @@
+/*****************************************************************************
+ * vesper - decohack - ammo for guns shooting
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+thing MTF_AMMO_CELLS free states
+thing MTF_AMMO_CELLS "Ichor Vial"
+{
+	states
+	{
+	spawn:
+		CELL ABC 4
+		loop
+	}
+}
+
+thing MTF_AMMO_CELLS_BOX free states
+thing MTF_AMMO_CELLS_BOX "Ichor Tank"
+{
+	states
+	{
+	spawn:
+		CELP ABC 4
+		loop
+	}
+}

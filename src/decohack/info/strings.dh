@@ -11,15 +11,15 @@ strings
 //	STR_GOTSHOTGUN2 "You got the super shotgun!"
 	STR_GOTCHAINGUN "You got the heavy spiker!"
 //	STR_GOTLAUNCHER "You got the rocket launcher!"
-//	STR_GOTPLASMA   "You got the plasma gun!"
+	STR_GOTPLASMA   "You got the ichor rifle!"
 //	STR_GOTBFG9000  "You got the BFG9000!  Oh, yes."
 	
 	STR_GOTCLIP     "Picked up a spike magazine."
 	STR_GOTCLIPBOX  "Picked up a box of spikes."
 //	STR_GOTROCKET   "Picked up a rocket."
 //	STR_GOTROCKBOX  "Picked up a box of rockets."
-//	STR_GOTCELL     "Picked up an energy cell."
-//	STR_GOTCELLBOX  "Picked up an energy cell pack."
+	STR_GOTCELL     "Picked up an ichor vial."
+	STR_GOTCELLBOX  "Picked up an ichor tank."
 	STR_GOTSHELLS   "Picked up an ion cartridge."
 	STR_GOTSHELLBOX "Picked up an ion battery pack."
 

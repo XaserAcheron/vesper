@@ -1,0 +1,109 @@
+/*****************************************************************************
+ * vesper - decohack - ichor rifle
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+weapon WP_PLASMA free states
+weapon WP_PLASMA "Ichor Rifle"
+{
+	ammotype AM_CELL
+	ammopershot 3
+	clear states
+	states
+	{
+		ready:
+			PLSG AAAAAAAAABBBCCCDDDEEE 1 A_WeaponReady
+			loop
+		select:
+			PLSG A 0 A_Raise
+			PLSG A 1 A_Raise
+			loop
+		deselect:
+			PLSG A 0 A_Lower
+			PLSG A 1 A_Lower
+			loop
+		fire:
+			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
+			PLSG A 0 A_ConsumeAmmo(1)
+			PLSG A 0 A_GunFlash()
+			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
+			PLSG A 1 Offset(3, 40)
+			PLSG A 1 Offset(2, 38)
+
+			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
+			PLSG A 0 A_ConsumeAmmo(1)
+			PLSG A 0 A_GunFlash()
+			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
+			PLSG A 1 Offset(-1, 40)
+			PLSG A 1 Offset(-1, 38)
+
+			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
+			PLSG A 0 A_ConsumeAmmo(1)
+			PLSG A 0 A_GunFlash()
+			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
+			PLSG A 1 Offset(1, 40)
+			PLSG A 1 Offset(1, 38)
+
+			PLSG C 2 Offset(1, 36)
+			PLSG DE 2
+			PLSG A 0 A_Refire
+			PLSG F 2 A_WeaponSound(sound DSICHREL)
+			PLSG G 2
+			PLSG HIJK 3
+			PLSG A 2 Offset(1, 35)
+			PLSG A 2 Offset(1, 33)
+			PLSG A 2 Offset(1, 32)
+			goto ready
+		flash:
+			PLSF A 1 Bright A_Light1
+			PLSF B 1 Bright A_Light2
+			PLSF C 2 Bright A_Light1
+			goto lightdone
+	}
+}
+
+thing XTF_ICHOR_SHOT "Ichor Bolt"
+{
+	Damage ICHOR_DAMAGE
+	Speed ICHOR_VELOCITY
+	Radius 11
+	Height 8
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	+MISSILE
+
+	SeeSound DSICHPRJ
+	DeathSound "firxpl" // [XA] TODO: new sound here
+
+	states
+	{
+		spawn:
+			ICHB A 0 Bright A_Spawn(XTF_ICHOR_TRAIL, 0)
+			ICHB A 0 Bright A_FindTracer(ICHOR_SEEK_FOV)
+			ICHB A 1 Bright A_SeekTracer(ICHOR_SEEK_THRESHOLD, ICHOR_SEEK_ANGLE)
+			loop
+		death:
+			ICHX H 4 Bright A_AddFlags(TRANSLUCENT, 0)
+			ICHX IJKLM 4 Bright
+			stop
+	}
+}
+
+thing XTF_ICHOR_TRAIL "Ichor Trail"
+{
+	Radius 4
+	Height 8
+
+	+NOBLOCKMAP
+	+TRANSLUCENT
+
+	states
+	{
+	spawn:
+		ICHX ABCDEFG 1 Bright
+		stop
+	}
+}

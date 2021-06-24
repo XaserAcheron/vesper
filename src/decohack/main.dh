@@ -15,6 +15,8 @@
 #include "actors/weapons/eagle.dh"
 #include "actors/weapons/blunderbuss.dh"
 #include "actors/weapons/spiker.dh"
+#include "actors/weapons/ichor.dh"
 
+#include "actors/items/ammo.dh"
 #include "actors/items/health.dh"
 #include "actors/items/powerups.dh"
