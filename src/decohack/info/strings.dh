@@ -14,8 +14,8 @@ strings
 //	STR_GOTPLASMA   "You got the plasma gun!"
 //	STR_GOTBFG9000  "You got the BFG9000!  Oh, yes."
 	
-	STR_GOTCLIP     "Picked up a nail magazine."
-	STR_GOTCLIPBOX  "Picked up a box of nails."
+	STR_GOTCLIP     "Picked up a spike magazine."
+	STR_GOTCLIPBOX  "Picked up a box of spikes."
 //	STR_GOTROCKET   "Picked up a rocket."
 //	STR_GOTROCKBOX  "Picked up a box of rockets."
 //	STR_GOTCELL     "Picked up an energy cell."
