@@ -23,24 +23,39 @@ weapon WP_PLASMA "Ichor Rifle"
 			PLSG A 0 A_Lower
 			PLSG A 1 A_Lower
 			loop
+
+		/* flash states */
+
+		flash1:
+			PLSF A 2 Bright A_Light1
+		flashdone:
+			PLSF C 2 Bright A_Light1
+			goto lightdone
+
+		flash2:
+			PLSF B 2 Bright A_Light2
+			goto flashdone
+
+		/* fire states */
+
 		fire:
 			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
 			PLSG A 0 A_ConsumeAmmo(1)
-			PLSG A 0 A_GunFlash()
+			PLSG A 0 A_GunFlashTo(flash1)
 			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
 			PLSG A 1 Offset(3, 40)
 			PLSG A 1 Offset(2, 38)
 
 			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
 			PLSG A 0 A_ConsumeAmmo(1)
-			PLSG A 0 A_GunFlash()
+			PLSG A 0 A_GunFlashTo(flash2)
 			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
 			PLSG A 1 Offset(-1, 40)
 			PLSG A 1 Offset(-1, 38)
 
 			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
 			PLSG A 0 A_ConsumeAmmo(1)
-			PLSG A 0 A_GunFlash()
+			PLSG A 0 A_GunFlashTo(flash1)
 			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
 			PLSG A 1 Offset(1, 40)
 			PLSG A 1 Offset(1, 38)
@@ -55,11 +70,6 @@ weapon WP_PLASMA "Ichor Rifle"
 			PLSG A 2 Offset(1, 33)
 			PLSG A 2 Offset(1, 32)
 			goto ready
-		flash:
-			PLSF A 1 Bright A_Light1
-			PLSF B 1 Bright A_Light2
-			PLSF C 2 Bright A_Light1
-			goto lightdone
 	}
 }
 
