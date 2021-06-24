@@ -20,8 +20,8 @@ strings
 //	STR_GOTROCKBOX  "Picked up a box of rockets."
 //	STR_GOTCELL     "Picked up an energy cell."
 //	STR_GOTCELLBOX  "Picked up an energy cell pack."
-//	STR_GOTSHELLS   "Picked up 4 shotgun shells."
-//	STR_GOTSHELLBOX "Picked up a box of shotgun shells."
+	STR_GOTSHELLS   "Picked up an ion cartridge."
+	STR_GOTSHELLBOX "Picked up an ion battery pack."
 
 	STR_GOTSTIM     "Picked up a first aid kit."
 	STR_GOTMEDIKIT  "Picked up a trauma kit."
