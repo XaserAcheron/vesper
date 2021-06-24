@@ -10,13 +10,13 @@ weapon WP_CHAINGUN free states
 weapon WP_CHAINGUN "Heavy Spiker"
 {
 	ammotype AM_CLIP
+	ammopershot 3
 	clear states
 	states
 	{
 		ready:
-			CHGG A 0 A_ReFire
 			CHGG A 1 A_WeaponReady
-			loop
+			wait
 		select:
 			CHGG A 0 A_Raise
 			CHGG A 1 A_Raise
