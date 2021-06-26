@@ -5,11 +5,16 @@
 TypicalSF (a.k.a. sonik.o.fan)
 - vintage eagle
 - blunderbuss
+- foehammer
 - blue gloves
 
 zrrion the insect
 - heavy spiker
+- ichor rifle (base parts)
 - nail clip
+
+Mike12
+- ichor rifle (main sprite)
 
 LossForWords
 - nail box
@@ -21,6 +26,28 @@ LossForWords
 
 ChopBlock224
 - blunderbuss muzzleflash
+- foehammer muzzleflash
+
+MrEnchanter
+- foehammer pickup
+
+osjclatchford
+- ichor rifle (base parts)
+
+Amuscaria
+- ichor rifle (base parts)
+
+Blox
+- ichor rifle (base parts)
 
 Raven Software
 - blunderbuss projectile
+
+Banjo Software
+- ichor rifle (base parts)
+
+Lobotomy Software
+- ichor rifle (base parts)
+
+Rogue Entertainment
+- ichor rifle (base parts)
