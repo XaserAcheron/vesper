@@ -42,6 +42,11 @@
 #define DSBUSCOK "fre007"
 #define DSBUSHIT "fre008"
 
+#define DSHAMFIR "fre012"
+#define DSHAMIN  "fre013"
+#define DSHAMOUT "fre014"
+#define DSHAMZAP "fre015"
+
 #define DSSPIKE1 "fre000"
 #define DSSPIKE2 "fre001"
 #define DSSPKFIR "fre002"
@@ -67,6 +72,11 @@
 #define BLUNDERBUSS_SHOT_1_VELOCITY 30
 #define BLUNDERBUSS_SHOT_2_VELOCITY 25
 #define BLUNDERBUSS_SHOT_3_VELOCITY 20
+
+#define HAMMER_BULLET_COUNT 14
+#define HAMMER_BULLET_DAMAGE 5
+#define HAMMER_BULLET_HSPREAD 2.5
+#define HAMMER_BULLET_VSPREAD 5.0
 
 #define SPIKE_VELOCITY 30
 #define SPIKE_DAMAGE 4

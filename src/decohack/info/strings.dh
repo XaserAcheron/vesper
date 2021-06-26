@@ -8,7 +8,7 @@ strings
 {
 //	STR_GOTCHAINSAW "A chainsaw!  Find some meat!"
 	STR_GOTSHOTGUN  "You got the blunderbuss!"
-//	STR_GOTSHOTGUN2 "You got the super shotgun!"
+	STR_GOTSHOTGUN2 "You got the foe hammer!"
 	STR_GOTCHAINGUN "You got the heavy spiker!"
 //	STR_GOTLAUNCHER "You got the rocket launcher!"
 	STR_GOTPLASMA   "You got the ichor rifle!"

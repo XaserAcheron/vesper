@@ -1,0 +1,54 @@
+/*****************************************************************************
+ * vesper - decohack - foe hammer
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+weapon WP_SUPERSHOTGUN free states
+weapon WP_SUPERSHOTGUN "Foe Hammer"
+{
+	ammotype AM_SHELL
+	ammopershot 2
+	clear states
+	states
+	{
+		ready:
+			SHT2 A 1 A_WeaponReady
+			wait
+		deselect:
+			SHT2 A 0 A_Lower
+			SHT2 A 1 A_Lower
+			loop
+		select:
+			SHT2 A 0 A_Raise
+			SHT2 A 1 A_Raise
+			loop
+		fire:
+			SHT2 B 0 Bright A_WeaponBulletAttack(HAMMER_BULLET_HSPREAD, HAMMER_BULLET_VSPREAD, HAMMER_BULLET_COUNT, HAMMER_BULLET_DAMAGE)
+			SHT2 A 0 Bright A_ConsumeAmmo
+			SHT2 A 0 Bright A_WeaponSound(sound DSHAMFIR)
+			SHT2 B 1 Bright A_GunFlash
+			SHT2 CD 2 Bright
+			SHT2 E 4
+			SHT2 FGH 3
+			SHT2 A 3 A_CheckReload
+			SHT2 IJ 2
+			SHT2 K 2
+			SHT2 K 2 Offset(-8, 40)
+			SHT2 L 2 A_WeaponSound(sound DSHAMIN)
+			SHT2 L 2 Offset(-16, 48)
+			SHT2 L 4 Offset(-18, 52)
+			SHT2 L 2 Offset(-16, 48)
+			SHT2 L 2 Offset(-8, 40) A_WeaponSound(sound DSHAMOUT)
+			SHT2 K 2
+			SHT2 K 2 Offset( -1, 32)
+			SHT2 JI 2
+			SHT2 A 0 A_ReFire
+			goto ready
+		flash:
+			TNT1 A 3 A_Light1
+			TNT1 A 2 A_Light2
+			TNT1 A 2 A_Light1
+			goto lightdone
+	}
+}

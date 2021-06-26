@@ -14,6 +14,7 @@
 
 #include "actors/weapons/eagle.dh"
 #include "actors/weapons/blunderbuss.dh"
+#include "actors/weapons/hammer.dh"
 #include "actors/weapons/spiker.dh"
 #include "actors/weapons/ichor.dh"
 
