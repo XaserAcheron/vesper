@@ -24,6 +24,11 @@ weapon WP_SUPERSHOTGUN "Foe Hammer"
 			SHT2 A 1 A_Raise
 			loop
 		fire:
+			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -30.0, 0.0, 0.0, -4.0)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -15.0, 0.0, 0.0, -4.0)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,   0.0, 0.0, 0.0, -4.0)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  15.0, 0.0, 0.0, -4.0)
+			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  30.0, 0.0, 0.0, -4.0)
 			SHT2 B 0 Bright A_WeaponBulletAttack(HAMMER_BULLET_HSPREAD, HAMMER_BULLET_VSPREAD, HAMMER_BULLET_COUNT, HAMMER_BULLET_DAMAGE)
 			SHT2 A 0 Bright A_ConsumeAmmo
 			SHT2 A 0 Bright A_WeaponSound(sound DSHAMFIR)
@@ -31,18 +36,17 @@ weapon WP_SUPERSHOTGUN "Foe Hammer"
 			SHT2 CD 2 Bright
 			SHT2 E 4
 			SHT2 FGH 3
-			SHT2 A 3 A_CheckReload
+			SHT2 A 5 A_CheckReload
 			SHT2 IJ 2
 			SHT2 K 2
 			SHT2 K 2 Offset(-8, 40)
 			SHT2 L 2 A_WeaponSound(sound DSHAMIN)
 			SHT2 L 2 Offset(-16, 48)
 			SHT2 L 4 Offset(-18, 52)
-			SHT2 L 2 Offset(-16, 48)
-			SHT2 L 2 Offset(-8, 40) A_WeaponSound(sound DSHAMOUT)
-			SHT2 K 2
-			SHT2 K 2 Offset( -1, 32)
-			SHT2 JI 2
+			SHT2 L 2 Offset(-16, 48) A_WeaponSound(sound DSHAMOUT)
+			SHT2 K 2 Offset(-8, 40)
+			SHT2 J 2 Offset( -1, 32)
+			SHT2 IA 2
 			SHT2 A 0 A_ReFire
 			goto ready
 		flash:
@@ -50,5 +54,47 @@ weapon WP_SUPERSHOTGUN "Foe Hammer"
 			TNT1 A 2 A_Light2
 			TNT1 A 2 A_Light1
 			goto lightdone
+	}
+}
+
+thing XTF_HAMMER_WAVE "Hammer Wave"
+{
+	Damage HAMMER_WAVE_DAMAGE
+	Speed HAMMER_WAVE_VELOCITY
+	Radius 16
+	Height 8
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	+MISSILE
+	+TRANSLUCENT
+	+RIP
+
+	states
+	{
+		spawn:
+			TNT1 AAAAAAAAAA 1 Bright A_SpawnObject(XTF_HAMMER_WAVE_TRAIL)
+			stop
+		death:
+			TNT1 A 1
+			stop
+	}
+}
+
+thing XTF_HAMMER_WAVE_TRAIL "Hammer Wave Trail"
+{
+	Radius 4
+	Height 8
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+TRANSLUCENT
+
+	states
+	{
+		spawn:
+			WAVE ABCDEF 2 Bright
+			stop
 	}
 }
