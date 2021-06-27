@@ -4,8 +4,14 @@
  *     MIT License
  ****************************************************************************/
 
-ammo AM_CLIP "Nails"
+ammo AM_CLIP "Spikes"
 {
 	max 120
 	pickup 6
+}
+
+ammo AM_SHELL "Ion Cartridges"
+{
+	max 30
+	pickup 3
 }

@@ -8,7 +8,7 @@ weapon WP_SUPERSHOTGUN free states
 weapon WP_SUPERSHOTGUN "Foe Hammer"
 {
 	ammotype AM_SHELL
-	ammopershot 2
+	ammopershot 3
 	clear states
 	states
 	{
