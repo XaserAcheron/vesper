@@ -15,8 +15,7 @@
 
 #define WAVE SP03
 
-#define ICHB SP01
-#define ICHX SP04
+#define ICHR SP04
 
 // ==============
 // dehnums
@@ -59,6 +58,7 @@
 
 #define DSICHFIR "fre009"
 #define DSICHPRJ "fre010"
+#define DSICHHIT "fre016"
 #define DSICHREL "fre011"
 
 // ==============

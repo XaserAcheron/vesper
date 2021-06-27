@@ -84,20 +84,21 @@ thing XTF_ICHOR_SHOT "Ichor Bolt"
 	+NOGRAVITY
 	+DROPOFF
 	+MISSILE
+	+TRANSLUCENT
 
 	SeeSound DSICHPRJ
-	DeathSound "firxpl" // [XA] TODO: new sound here
+	DeathSound DSICHHIT
 
 	states
 	{
 		spawn:
-			ICHB A 0 Bright A_Spawn(XTF_ICHOR_TRAIL, 0)
-			ICHB A 0 Bright A_FindTracer(ICHOR_SEEK_FOV)
-			ICHB A 1 Bright A_SeekTracer(ICHOR_SEEK_THRESHOLD, ICHOR_SEEK_ANGLE)
+			ICHR A 0 Bright A_SpawnObject(XTF_ICHOR_TRAIL)
+			ICHR A 0 Bright A_FindTracer(ICHOR_SEEK_FOV)
+			ICHR A 1 Bright A_SeekTracer(ICHOR_SEEK_THRESHOLD, ICHOR_SEEK_ANGLE)
 			loop
 		death:
-			ICHX H 4 Bright A_AddFlags(TRANSLUCENT, 0)
-			ICHX IJKLM 4 Bright
+			ICHR H 4 Bright A_AddFlags(TRANSLUCENT, 0)
+			ICHR IJKLM 4 Bright
 			stop
 	}
 }
@@ -108,12 +109,14 @@ thing XTF_ICHOR_TRAIL "Ichor Trail"
 	Height 8
 
 	+NOBLOCKMAP
+	+NOGRAVITY
 	+TRANSLUCENT
 
 	states
 	{
 	spawn:
-		ICHX ABCDEFG 1 Bright
+		TNT1 A 1 Bright
+		ICHR CDEFG 1 Bright
 		stop
 	}
 }
