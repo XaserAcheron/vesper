@@ -16,6 +16,9 @@ zrrion the insect
 Mike12
 - ichor rifle (main sprite)
 
+NoozeArts
+- vile driver
+
 LossForWords
 - nail box
 - first aid kit
@@ -24,9 +27,13 @@ LossForWords
 - hyper-steroids
 - holomap
 
+BouncyTEM
+- heavy spiker firing sounds
+
 ChopBlock224
 - blunderbuss muzzleflash
 - foehammer muzzleflash
+- vile driver pickup (base)
 
 MrEnchanter
 - foehammer pickup
@@ -36,18 +43,28 @@ osjclatchford
 
 Amuscaria
 - ichor rifle (base parts)
+- ichor rifle projectile
+- vile driver projectile
 
 Blox
 - ichor rifle (base parts)
 
-Raven Software
+Raven Software (Heretic)
 - blunderbuss projectile
 
-Banjo Software
+Banjo Software (Hacx)
 - ichor rifle (base parts)
 
-Lobotomy Software
+Lobotomy Software (Powerslave)
 - ichor rifle (base parts)
 
-Rogue Entertainment
+Rogue Entertainment (Strife)
 - ichor rifle (base parts)
+
+People Can Fly (Painkiller)
+- spike impact sound
+- ichor rifle sounds
+- vile driver sounds
+
+Capcom (Devil May Cry 2)
+- vintage eagle firing sound
