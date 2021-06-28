@@ -17,6 +17,7 @@
 #include "actors/weapons/hammer.dh"
 #include "actors/weapons/spiker.dh"
 #include "actors/weapons/ichor.dh"
+#include "actors/weapons/vile.dh"
 
 #include "actors/items/ammo.dh"
 #include "actors/items/health.dh"

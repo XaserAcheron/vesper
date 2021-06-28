@@ -12,8 +12,8 @@ strings
 	STR_GOTCHAINGUN "You got the heavy spiker!"
 //	STR_GOTLAUNCHER "You got the rocket launcher!"
 	STR_GOTPLASMA   "You got the ichor rifle!"
-//	STR_GOTBFG9000  "You got the BFG9000!  Oh, yes."
-	
+	STR_GOTBFG9000  "You got the vile driver!  Wicked sick!"
+
 	STR_GOTCLIP     "Picked up a spike magazine."
 	STR_GOTCLIPBOX  "Picked up a box of spikes."
 //	STR_GOTROCKET   "Picked up a rocket."

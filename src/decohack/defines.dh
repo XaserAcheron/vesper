@@ -16,6 +16,7 @@
 #define WAVE SP03
 
 #define ICHR SP04
+#define BILE SP05
 
 // ==============
 // dehnums
@@ -34,6 +35,10 @@
 
 #define XTF_ICHOR_SHOT  158
 #define XTF_ICHOR_TRAIL 159
+
+#define XTF_VILE_SHOT_1 162
+#define XTF_VILE_SHOT_2 163
+#define XTF_VILE_TRAIL  164
 
 // ==============
 // sound aliases
@@ -60,6 +65,15 @@
 #define DSICHPRJ "fre010"
 #define DSICHHIT "fre016"
 #define DSICHREL "fre011"
+
+#define DSVIDACT "fre017"
+#define DSVIDUP  "fre018"
+#define DSVIDSTR "fre019"
+#define DSVIDSPN "fre020"
+#define DSVIDDRY "fre021"
+#define DSVIDDWN "fre022"
+#define DSVIDFIR "fre023"
+#define DSVIDHIT "fre016"
 
 // ==============
 // balance tweaks
@@ -93,3 +107,9 @@
 #define ICHOR_SEEK_FOV 90.0
 #define ICHOR_SEEK_THRESHOLD 9.0
 #define ICHOR_SEEK_ANGLE 6.0
+
+#define VILE_VELOCITY 20
+#define VILE_DAMAGE 10
+#define VILE_SEEK_FOV 90.0
+#define VILE_SEEK_THRESHOLD 2.0
+#define VILE_SEEK_ANGLE 4.0
