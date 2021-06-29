@@ -24,14 +24,14 @@ weapon WP_SUPERSHOTGUN "Foe Hammer"
 			SHT2 A 1 A_Raise
 			loop
 		fire:
-			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -30.0, 0.0,-8.0, -4.0)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -15.0, 0.0,-4.0, -4.0)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,   0.0, 0.0, 0.0, -4.0)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  15.0, 0.0, 4.0, -4.0)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  30.0, 0.0, 8.0, -4.0)
 			SHT2 B 0 Bright A_WeaponBulletAttack(HAMMER_BULLET_HSPREAD, HAMMER_BULLET_VSPREAD, HAMMER_BULLET_COUNT, HAMMER_BULLET_DAMAGE)
-			SHT2 A 0 Bright A_ConsumeAmmo
-			SHT2 A 0 Bright A_WeaponSound(sound DSHAMFIR)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -30.0, 0.0,-8.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -15.0, 0.0,-4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,   0.0, 0.0, 0.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  15.0, 0.0, 4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  30.0, 0.0, 8.0, -4.0)
+			SHT2 B 0 Bright A_ConsumeAmmo
+			SHT2 B 0 Bright A_WeaponSound(sound DSHAMFIR)
 			SHT2 B 1 Bright A_GunFlash
 			SHT2 CD 2 Bright
 			SHT2 E 4
