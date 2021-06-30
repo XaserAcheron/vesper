@@ -7,11 +7,12 @@ TypicalSF (a.k.a. sonik.o.fan)
 - blunderbuss
 - foehammer
 - blue gloves
+- ion cartridge & pack
 
 zrrion the insect
 - heavy spiker
 - ichor rifle (base parts)
-- nail clip
+- spike clip
 
 Mike12
 - ichor rifle (main sprite)
@@ -20,7 +21,7 @@ NoozeArts
 - vile driver
 
 LossForWords
-- nail box
+- spike box
 - first aid kit
 - trauma kit
 - PILLS HERE
