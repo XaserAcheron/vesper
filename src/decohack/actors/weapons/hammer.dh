@@ -25,11 +25,15 @@ weapon WP_SUPERSHOTGUN "Foe Hammer"
 			loop
 		fire:
 			SHT2 B 0 Bright A_WeaponBulletAttack(HAMMER_BULLET_HSPREAD, HAMMER_BULLET_VSPREAD, HAMMER_BULLET_COUNT, HAMMER_BULLET_DAMAGE)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -30.0, 0.0,-8.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE, -15.0, 0.0,-4.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,   0.0, 0.0, 0.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  15.0, 0.0, 4.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE,  30.0, 0.0, 8.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      , -30.0, 0.0,-8.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS, -22.5, 0.0,-6.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      , -15.0, 0.0,-4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS,  -7.5, 0.0,-2.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      ,   0.0, 0.0, 0.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS,   7.5, 0.0, 2.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      ,  15.0, 0.0, 4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS,  22.5, 0.0, 6.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      ,  30.0, 0.0, 8.0, -4.0)
 			SHT2 B 0 Bright A_ConsumeAmmo
 			SHT2 B 0 Bright A_WeaponSound(sound DSHAMFIR)
 			SHT2 B 1 Bright A_GunFlash
@@ -61,7 +65,7 @@ thing XTF_HAMMER_WAVE "Hammer Wave"
 {
 	Damage HAMMER_WAVE_DAMAGE
 	Speed HAMMER_WAVE_VELOCITY
-	Radius 16
+	Radius 11
 	Height 8
 
 	+NOBLOCKMAP
@@ -78,6 +82,16 @@ thing XTF_HAMMER_WAVE "Hammer Wave"
 			stop
 		death:
 			TNT1 A 1
+			stop
+	}
+}
+
+thing XTF_HAMMER_WAVE_INVIS : thing XTF_HAMMER_WAVE "Hammer Wave (Invisible)"
+{
+	states
+	{
+		spawn:
+			TNT1 AAAAAAAAAA 1 Bright
 			stop
 	}
 }
