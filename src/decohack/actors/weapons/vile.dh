@@ -102,12 +102,12 @@ thing XTF_VILE_SHOT_1 "Vile Bolt"
 		seek:
 			BILE A 0 Bright A_SpawnObject(XTF_VILE_TRAIL)
 			BILE A 1 Bright A_SeekTracer(VILE_SEEK_THRESHOLD, VILE_SEEK_ANGLE)
-			loop
+		tryseek:
+			BILE A 0 Bright A_JumpIfTracerInSight(seek)
 		spawn:
 			BILE AAAAAAAA 1 Bright A_SpawnObject(XTF_VILE_TRAIL)
 			BILE A 0 Bright A_FindTracer(VILE_SEEK_FOV)
-			BILE A 0 Bright A_JumpIfTracerInSight(seek)
-			loop
+			goto tryseek
 		death:
 			BILE H 4 Bright A_AddFlags(TRANSLUCENT, 0)
 			BILE IJKLM 4 Bright
