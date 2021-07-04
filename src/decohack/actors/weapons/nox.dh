@@ -100,7 +100,9 @@ thing XTF_NOX_GRENADE "Nox Grenade"
 		death:
 			NOXG H 1 Bright A_RadiusDamage(NOX_GRENADE_SPLASH_DAMAGE, NOX_GRENADE_SPLASH_RADIUS)
 			NOXG HI 1 Bright
-			NOXG B 2 Bright A_SpawnObject(XTF_NOX_GAS_CLOUD)
+			NOXG B 0 Bright A_AddFlags(MISSILE)
+			NOXG B 0 Bright A_SpawnObject(XTF_NOX_GAS_CLOUD)
+			NOXG B 2 Bright A_RemoveFlags(MISSILE)
 			NOXG C 0 Bright A_SpawnObject(XTF_NOX_EXPLOSION_1,  30.0, 48.0, 0.0, 0.0)
 			NOXG C 2 Bright A_SpawnObject(XTF_NOX_EXPLOSION_2, 210.0, 48.0, 0.0, 0.0)
 			NOXG D 2 Bright
@@ -197,7 +199,6 @@ thing XTF_NOX_GAS_CLOUD "Nox Gas Cloud"
 			NGAS ST 4 Bright
 			NGAS U 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
 			NGAS VW 4 Bright
-//			NGAS DEFGHIJKLMNOPQRSTUVW 4 Bright
 			stop
 		death:
 			TNT1 A 2
