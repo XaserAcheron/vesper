@@ -15,3 +15,9 @@ ammo AM_SHELL "Ion Cartridges"
 	max 30
 	pickup 3
 }
+
+ammo AM_MISL "Nox Grenades"
+{
+	max 20
+	pickup 1
+}
