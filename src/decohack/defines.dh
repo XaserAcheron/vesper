@@ -15,6 +15,10 @@
 
 #define WAVE SP03
 
+#define NOXG SP01
+#define NOXX SP06
+#define NGAS SP07
+
 #define ICHR SP04
 #define BILE SP05
 
@@ -33,6 +37,13 @@
 #define DEHNUM_SPIKE_SHOT_LEFT  151
 #define DEHNUM_SPIKE_SHOT_RIGHT 152
 #define DEHNUM_SPIKE_TRAIL      153
+
+#define XTF_NOX_GRENADE     166
+#define XTF_NOX_TRAIL       167
+#define XTF_NOX_EXPLOSION_1 168
+#define XTF_NOX_EXPLOSION_2 169
+#define XTF_NOX_EXPLOSION_3 170
+#define XTF_NOX_GAS_CLOUD   171
 
 #define XTF_ICHOR_SHOT  158
 #define XTF_ICHOR_TRAIL 159
@@ -61,6 +72,16 @@
 #define DSSPIKE2 "fre001"
 #define DSSPKFIR "fre002"
 #define DSSPKHIT "fre003"
+
+#define DSNOXFIR "fre024"
+#define DSNOXOPN "fre025"
+#define DSNOXLOD "fre026"
+#define DSNOXCLS "fre027"
+#define DSNOXHIT "fre028"
+#define DSNOXPL1 "fre029"
+#define DSNOXPL2 "fre030"
+#define DSNOXPL3 "fre031"
+#define DSNOXGAS "fre032"
 
 #define DSICHFIR "fre009"
 #define DSICHPRJ "fre010"
@@ -102,6 +123,13 @@
 
 #define SPIKE_VELOCITY 30
 #define SPIKE_DAMAGE 6
+
+#define NOX_GRENADE_VELOCITY 30
+#define NOX_GRENADE_IMPACT_DAMAGE 20
+#define NOX_GRENADE_SPLASH_DAMAGE 192
+#define NOX_GRENADE_SPLASH_RADIUS 192
+#define NOX_GAS_CLOUD_DAMAGE 32
+#define NOX_GAS_CLOUD_RADIUS 224
 
 #define ICHOR_VELOCITY 20
 #define ICHOR_DAMAGE 10

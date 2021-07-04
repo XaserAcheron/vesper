@@ -1,0 +1,206 @@
+/*****************************************************************************
+ * vesper - decohack - nox launcher
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+weapon WP_MISSILE free states
+weapon WP_MISSILE "Nox Launcher"
+{
+	ammotype AM_MISL
+	ammopershot 1
+	clear states
+	states
+	{
+		ready:
+			MISG A 1 A_WeaponReady
+			wait
+		select:
+			MISG A 0 A_Raise
+			MISG A 1 A_Raise
+			loop
+		deselect:
+			MISG A 0 A_Lower
+			MISG A 1 A_Lower
+			loop
+		fire:
+			MISF A 2 Bright A_GunFlash()
+			MISF B 0 Bright A_ConsumeAmmo(1)
+			MISF B 0 Bright A_WeaponProjectile(XTF_NOX_GRENADE, 0.0, 0.0, 0.0, -2.0)
+			MISF B 2 Bright A_WeaponSound(sound DSNOXFIR)
+			MISF CDEFG 2
+			MISG A 3
+			MISG B 2
+			MISG C 2 Offset(-24, 36)
+			MISG C 2 Offset(-56, 32)
+			MISG C 2 Offset(-64, 32)
+			MISG C 2 Offset(-48, 36)
+			MISG D 2 Offset(-16, 34) A_WeaponSound(sound DSNOXOPN)
+			MISG E 2 Offset( 1, 32)
+			MISG F 2 Offset(-8, 32)
+			MISG F 2 Offset( 1, 34)
+			MISG F 2 Offset( 4, 35)
+			MISG F 2 Offset( 3, 34)
+			MISG F 2 Offset( 2, 33)
+			MISG F 2 Offset( 1, 32)
+			MISG GH 1
+			MISG IJ 2
+			MISG K 3
+			MISG L 3 A_WeaponSound(sound DSNOXLOD)
+			MISG M 2
+			MISG NO 3
+			MISG P 2
+			MISG QR 1
+			MISG S 2 A_WeaponSound(sound DSNOXCLS)
+			MISG D 2
+			MISG C 2 Offset(-8, 36)
+			MISG C 2 Offset(-16, 32)
+			MISG B 2 Offset(1, 33)
+			MISG A 2 A_Refire
+			goto ready
+		flash:
+			TNT1 A 3 A_Light1
+			TNT1 A 3 A_Light2
+			TNT1 A 3 A_Light1
+			goto lightdone
+	}
+}
+
+thing XTF_NOX_GRENADE "Nox Grenade"
+{
+	Damage NOX_GRENADE_IMPACT_DAMAGE
+	Speed NOX_GRENADE_VELOCITY
+	Radius 11
+	Height 8
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	+MISSILE
+	+FORCERADIUSDMG
+
+	DeathSound DSNOXHIT
+
+	states
+	{
+		spawn:
+			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 1.500, 0.000)
+			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-1.500, 0.000)
+			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 1.299, 0.750)
+			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-1.299,-0.750)
+			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.750, 1.299)
+			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000,-1.500)
+			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000, 1.500)
+			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-0.750,-1.299)
+			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-0.750, 1.299)
+			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.750,-1.299)
+			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-1.299, 0.750)
+			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 1.299,-0.750)
+			loop
+		death:
+			NOXG H 1 Bright A_RadiusDamage(NOX_GRENADE_SPLASH_DAMAGE, NOX_GRENADE_SPLASH_RADIUS)
+			NOXG HI 1 Bright
+			NOXG B 2 Bright A_SpawnObject(XTF_NOX_GAS_CLOUD)
+			NOXG C 0 Bright A_SpawnObject(XTF_NOX_EXPLOSION_1,  30.0, 48.0, 0.0, 0.0)
+			NOXG C 2 Bright A_SpawnObject(XTF_NOX_EXPLOSION_2, 210.0, 48.0, 0.0, 0.0)
+			NOXG D 2 Bright
+			NOXG E 0 Bright A_SpawnObject(XTF_NOX_EXPLOSION_2, 150.0, 48.0, 0.0, 0.0)
+			NOXG E 2 Bright A_SpawnObject(XTF_NOX_EXPLOSION_3, 230.0, 48.0, 0.0, 0.0)
+			NOXG F 2 Bright
+			NOXG G 0 Bright A_SpawnObject(XTF_NOX_EXPLOSION_3,  90.0, 48.0, 0.0, 0.0)
+			NOXG G 4 Bright A_SpawnObject(XTF_NOX_EXPLOSION_1, 270.0, 48.0, 0.0, 0.0)
+			TNT1 A 30
+			stop
+	}
+}
+
+thing XTF_NOX_TRAIL "Nox Trail"
+{
+	Radius 4
+	Height 8
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+TRANSLUCENT
+
+	states
+	{
+	spawn:
+		SP01 JJKLM 1 Bright
+		stop
+	}
+}
+
+thing XTF_NOX_EXPLOSION_1 "Nox Explosion 1"
+{
+	Radius 4
+	Height 8
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+TRANSLUCENT
+
+	DeathSound DSNOXPL1
+
+	states
+	{
+		spawn:
+			NOXX A 1 Bright
+			NOXX A 2 Bright A_Scream
+			NOXX BC 2 Bright
+			NOXX DE 3 Bright
+			stop
+	}
+}
+
+thing XTF_NOX_EXPLOSION_2 : thing XTF_NOX_EXPLOSION_1 "Nox Explosion 2"
+{
+	DeathSound DSNOXPL2
+}
+
+thing XTF_NOX_EXPLOSION_3 : thing XTF_NOX_EXPLOSION_1 "Nox Explosion 3"
+{
+	DeathSound DSNOXPL3
+}
+
+thing XTF_NOX_GAS_CLOUD "Nox Gas Cloud"
+{
+	Damage 0
+	Speed 0
+	Radius 11
+	Height 8
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	+MISSILE
+	+TRANSLUCENT
+	+FORCERADIUSDMG
+	+NOCLIP
+
+	states
+	{
+		spawn:
+			NGAS A 4 Bright
+			NGAS B 4 Bright A_PlaySound(sound DSNOXGAS)
+			NGAS C 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
+			NGAS DE 4 Bright
+			NGAS F 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
+			NGAS GH 4 Bright
+			NGAS I 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
+			NGAS JK 4 Bright
+			NGAS L 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
+			NGAS MN 4 Bright
+			NGAS O 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
+			NGAS PQ 4 Bright
+			NGAS R 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
+			NGAS ST 4 Bright
+			NGAS U 4 Bright A_RadiusDamage(NOX_GAS_CLOUD_DAMAGE, NOX_GAS_CLOUD_RADIUS)
+			NGAS VW 4 Bright
+//			NGAS DEFGHIJKLMNOPQRSTUVW 4 Bright
+			stop
+		death:
+			TNT1 A 2
+			stop
+	}
+}
