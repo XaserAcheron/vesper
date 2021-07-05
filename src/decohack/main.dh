@@ -12,6 +12,7 @@
 #include "info/strings.dh"
 #include "info/misc.dh"
 
+#include "actors/weapons/axe.dh"
 #include "actors/weapons/eagle.dh"
 #include "actors/weapons/blunderbuss.dh"
 #include "actors/weapons/hammer.dh"

@@ -56,6 +56,9 @@
 // sound aliases
 // ==============
 
+#define DSAXESWG "fre033"
+#define DSAXEHIT "fre034"
+
 #define DSMAGNUM "fre004"
 
 #define DSBUSFIR "fre005"

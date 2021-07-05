@@ -1,0 +1,39 @@
+/*****************************************************************************
+ * vesper - decohack - acks!
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+state protect S_SAW // prevent idle sound
+
+weapon WP_CHAINSAW free states
+weapon WP_CHAINSAW "Axe"
+{
+	clear states
+	states
+	{
+		ready:
+			SAWG A 1 A_WeaponReady
+			wait
+		deselect:
+			SAWG A 0 A_Lower
+			SAWG A 1 A_Lower
+			loop
+		select:
+			SAWG A 0 A_Raise
+			SAWG A 1 A_Raise
+			loop
+		fire:
+			SAWG BC 1
+			TNT1 A 4
+			hold:
+			SAWG D 2 A_WeaponSound(sound DSAXESWG)
+			SAWG E 2
+			SAWG F 2 A_WeaponMeleeAttack(10, 10, 5.0, sound DSAXEHIT, 96.0)
+			SAWG GH 2
+			TNT1 A 12
+			SAWG C 2 A_ReFireTo(hold)
+			SAWG B 2
+			goto ready
+	}
+}
