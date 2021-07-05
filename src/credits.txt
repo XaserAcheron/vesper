@@ -6,6 +6,7 @@ TypicalSF (a.k.a. sonik.o.fan)
 - vintage eagle
 - blunderbuss
 - foehammer
+- nox launcher
 - blue gloves
 - ion cartridge & pack
 
@@ -19,6 +20,9 @@ Mike12
 
 NoozeArts
 - vile driver
+
+Neoworm
+- axe
 
 LossForWords
 - spike box
@@ -40,12 +44,15 @@ MrEnchanter
 - foehammer pickup
 
 osjclatchford
+- nox launcher
 - ichor rifle (base parts)
 
 Amuscaria
 - ichor rifle (base parts)
 - ichor rifle projectile
 - vile driver projectile
+- nox projectile
+- nox ammo
 
 Blox
 - ichor rifle (base parts)
