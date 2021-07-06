@@ -21,3 +21,9 @@ ammo AM_MISL "Nox Grenades"
 	max 20
 	pickup 1
 }
+
+ammo AM_CELL "Ichor"
+{
+	max 150
+	pickup 15
+}
