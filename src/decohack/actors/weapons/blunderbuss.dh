@@ -36,7 +36,7 @@ weapon WP_SHOTGUN "Blunderbuss"
 			SHTF D 2 Offset(1, 42)
 			SHTF E 2 Offset(1, 40)
 			SHTF F 1 Offset(1, 36)
-			SHTG A 1
+			SHTG A 1 A_CheckReload
 			SHTG BC 2
 			SHTG D 3
 			SHTG F 2 A_WeaponSound(sound DSBUSCOK)

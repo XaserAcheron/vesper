@@ -30,7 +30,7 @@ weapon WP_MISSILE "Nox Launcher"
 			MISF B 2 Bright A_WeaponSound(sound DSNOXFIR)
 			MISF CDEFG 2
 			MISG A 3
-			MISG B 2
+			MISG B 2 A_CheckReload
 			MISG C 2 Offset(-24, 36)
 			MISG C 2 Offset(-56, 32)
 			MISG C 2 Offset(-64, 32)
