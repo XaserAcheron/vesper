@@ -56,6 +56,11 @@
 // sound aliases
 // ==============
 
+#define DSFSTSW1 "fre035"
+#define DSFSTSW2 "fre036"
+#define DSFSTHT1 "fre037"
+#define DSFSTHT2 "fre038"
+
 #define DSAXESWG "fre033"
 #define DSAXEHIT "fre034"
 
@@ -103,6 +108,16 @@
 // ==============
 // balance tweaks
 // ==============
+
+#define FIST_RIGHT_JAB_DAMAGE_BASE 2
+#define FIST_RIGHT_JAB_DAMAGE_DICE 10
+#define FIST_RIGHT_JAB_DAMAGE_ZERK 10.0
+#define FIST_RIGHT_JAB_RANGE 64.0
+
+#define FIST_LEFT_JAB_DAMAGE_BASE 3
+#define FIST_LEFT_JAB_DAMAGE_DICE 10
+#define FIST_LEFT_JAB_DAMAGE_ZERK 10.0
+#define FIST_LEFT_JAB_RANGE 64.0
 
 #define MAGNUM_DAMAGE 15
 #define MAGNUM_SPREAD 0.0

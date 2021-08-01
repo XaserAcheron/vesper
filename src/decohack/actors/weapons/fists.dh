@@ -1,0 +1,39 @@
+/*****************************************************************************
+ * vesper - decohack - punchy fistpunch
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+weapon WP_FIST free states
+weapon WP_FIST "Fists"
+{
+	clear states
+	states
+	{
+		ready:
+			PUNG A 1 A_WeaponReady
+			wait
+		deselect:
+			PUNG A 0 A_Lower
+			PUNG A 1 A_Lower
+			loop
+		select:
+			PUNG A 0 A_Raise
+			PUNG A 1 A_Raise
+			loop
+		leftjab:
+			PUNG B 2 A_WeaponSound(sound DSFSTSW2)
+			PUNG C 6 A_WeaponMeleeAttack(FIST_LEFT_JAB_DAMAGE_BASE, FIST_LEFT_JAB_DAMAGE_DICE, FIST_LEFT_JAB_DAMAGE_ZERK, sound DSFSTHT2, FIST_LEFT_JAB_RANGE)
+			PUNG B 2
+			PUNG A 5
+			PUNG A 0 A_ReFire
+			goto ready
+		fire:
+			PUNG D 2 A_WeaponSound(sound DSFSTSW1)
+			PUNG E 4 A_WeaponMeleeAttack(FIST_RIGHT_JAB_DAMAGE_BASE, FIST_RIGHT_JAB_DAMAGE_DICE, FIST_RIGHT_JAB_DAMAGE_ZERK, sound DSFSTHT1, FIST_RIGHT_JAB_RANGE)
+			PUNG D 2
+			PUNG A 3
+			PUNG A 0 A_ReFireTo(leftjab)
+			goto ready
+	}
+}
