@@ -56,6 +56,8 @@
 // sound aliases
 // ==============
 
+#define DSPLPAI2 "fre039"
+
 #define DSFSTSW1 "fre035"
 #define DSFSTSW2 "fre036"
 #define DSFSTHT1 "fre037"
