@@ -5,6 +5,11 @@ Primary purpose         : Everything! 'Tis a gameplay mod.
 Title                   : Vesper
 Filename                : xa-vesper.wad
 Release date            : 2022-01-02
+Version                 : 1.0.0
+Project Homepage        : https://hellforgestudios.com/doomforge/vesper/
+Git Repo                : https://github.com/XaserAcheron/vesper
+Discussion Thread       : https://www.doomworld.com/forum/topic/123800
+
 Author                  : Xaser Acheron
 Email Address           : [beep boop i'm a shoop]
 Other Files By Author   : https://doomwiki.org/wiki/Xaser
