@@ -4,7 +4,6 @@
  *     MIT License
  ****************************************************************************/
 
-thing MTF_AMMO_CELLS free states
 thing MTF_AMMO_CELLS "Ichor Vial"
 {
 	states
@@ -15,7 +14,6 @@ thing MTF_AMMO_CELLS "Ichor Vial"
 	}
 }
 
-thing MTF_AMMO_CELLS_BOX free states
 thing MTF_AMMO_CELLS_BOX "Ichor Tank"
 {
 	states

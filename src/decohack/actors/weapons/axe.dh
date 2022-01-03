@@ -6,7 +6,6 @@
 
 state protect S_SAW // prevent idle sound
 
-weapon WP_CHAINSAW free states
 weapon WP_CHAINSAW "Axe"
 {
 	clear states

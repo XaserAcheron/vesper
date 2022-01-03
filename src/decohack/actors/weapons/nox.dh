@@ -4,7 +4,6 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_MISSILE free states
 weapon WP_MISSILE "Nox Launcher"
 {
 	ammotype AM_MISL

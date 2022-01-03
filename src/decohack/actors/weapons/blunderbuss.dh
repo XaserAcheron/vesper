@@ -4,7 +4,6 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_SHOTGUN free states
 weapon WP_SHOTGUN "Blunderbuss"
 {
 	ammotype AM_SHELL

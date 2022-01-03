@@ -4,9 +4,6 @@
  *     MIT License
  ****************************************************************************/
 
-state free S_CHAINFLASH2
-
-weapon WP_CHAINGUN free states
 weapon WP_CHAINGUN "Heavy Spiker"
 {
 	ammotype AM_CLIP

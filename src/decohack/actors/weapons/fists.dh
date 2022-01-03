@@ -4,7 +4,6 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_FIST free states
 weapon WP_FIST "Fists"
 {
 	clear states
