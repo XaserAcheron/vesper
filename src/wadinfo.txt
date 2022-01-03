@@ -1,18 +1,35 @@
 ===========================================================================
-Advanced engine needed  : DSDA-Doom, Eternity, GZDoom, or Doom Retro
+Advanced engine needed  : MBF21-supporting port -- DSDA-Doom recommended!
 Primary purpose         : Everything! 'Tis a gameplay mod.
 ===========================================================================
 Title                   : Vesper
 Filename                : xa-vesper.wad
-Release date            : [TBD]
+Release date            : 2022-01-02
 Author                  : Xaser Acheron
-Email Address           : xaser.88@gmail.com
+Email Address           : [beep boop i'm a shoop]
 Other Files By Author   : https://doomwiki.org/wiki/Xaser
 Misc. Author Info       : I AM A XASER
 
-Description             : [XA] TODO: description
+Description             : Stylish, high-tech weapon mod for MBF21 ports,
+                          serving as a new-DEHACKED feature showcase.
+                          Features a shiny new roster of weapons that
+                          will make you say "I can't believe it's not
+                          GZDoom!"
 
-Additional Credits to   : [TBD]
+                          Field Agent Vesper Montgomery was expecting an
+                          intelligence-gathering mission, not a full-on
+                          demonic outbreak. Nevertheless, with an arsenal
+                          of plasma shotguns, acid grenades, arcane blood
+                          sprayers, and indestructible eyeglasses on hand,
+                          why not kick some ass while in the neighborhood?
+
+                          Vesper is a Doomforge project, hosted by the
+                          fine folks at Hellforge Studios. Check out
+                          https://hellforgestudios.com/doomforge/ for
+                          more kickass Doom stuffs, and hop on our
+                          Discord to chat (and/or vent) about the mod!
+
+Additional Credits to   : See Credits section below for a full breakdown
 
 ===========================================================================
 * What is included *
@@ -21,21 +38,157 @@ New levels              : None ('tis a gameplay mod)
 Sounds                  : Yes
 Music                   : Yes
 Graphics                : Yes
-Dehacked/BEX Patch      : Yes
+Dehacked/BEX Patch      : Yes (the new MBF21 hotness!)
 Demos                   : Yes
-Other                   : 
-Other files required    : 
+Other                   : Probably
+Other files required    : None
 
 ===========================================================================
 * Play Information *
 
-Game                    : Doom / Doom 2 / Heretic ... etc.
-Map #                   : EXMY / MAPXX ...
-Single Player           : Designed for / Player Starts Only / No
-Cooperative 2-4 Player  : Designed for / Player Starts Only / No
-Deathmatch 2-4 Player   : Designed for / Player Starts Only / No
-Other game styles       : 
-Difficulty Settings     : Not implemented / Yes
+Game                    : Doom, Doom 2, Final Doom, or your PWAD of choice
+Map #                   : All of them.
+Single Player           : Yes
+Cooperative 2-4 Player  : Yes
+Deathmatch 2-4 Player   : Perhaps -- Balance may not be perfect just yet.
+Other game styles       : Sure!
+Difficulty Settings     : Very Important
+
+===========================================================================
+* Construction *
+
+Base                    : Code from scratch. Resources by various folk.
+Build Time              : Time is an imaginary construct.
+Editor(s) used          : DoomTools, SLADE, VSCode, Paint Shop Pro 7, Git
+May Not Run With...     : Non-MBF21-supporting ports. This project has been
+                          extensively tested with dsda-doom; any other port
+                          is currently at "swim at your own risk" stage;
+                          there will be more cross-port testing n' fixes
+                          before the super-final release of this project,
+                          but for now, when in doubt, stick with dsda-doom.
+
+===========================================================================
+* Port Compatibility *
+
+Vesper uses MBF21 features, and requires a port that supports the standard.
+Known working ports at the time of writing include:
+- DSDA-Doom (recommended!) -- 0.22.5 or later
+- Woof -- 8.1.0 or later
+
+More ports are on the way -- expect this list to expand soon. :)
+
+BIG NOTE(tm): as of 2022-01-02 (Jan 2nd; Xaser writes dates weirdly),
+GZDoom and Eternity don't yet support the full MBF21 spec, so the mod will
+NOT work in either of these ports. Support is a work in progress, so this
+oughta change in the near-ish future. Until then, if you give it a try and
+anything seems awry, I told you so. ;)
+
+===========================================================================
+* Wad Compatibility *
+
+Vesper is designed to be compatible with the vast majority of classic Boom
+megawads, even those that use DEHACKED. As long as the wad doesn't make
+use of the extended DEHEXTRA state range (there will usually be some note
+in the text file saying as such), it will probably work.
+
+One known exception is STRAIN -- it uses a sprite renaming trick to work
+around a vanilla Doom bug, which unfortunately mucks up Vesper's sprites.
+
+Additionally, Vesper includes a custom palette that may conflict with wads
+that also modify the palette. BTSX and Ancient Aliens in particular will
+not work at the time of writing (though a support patch for these in the
+future isn't out of the question ;).
+
+When in doubt, give it a try! You may be surprised what works.
+
+===========================================================================
+* Credits *
+
+Xaser
+- code n' stuff
+- lots o' sprite & sound edits
+- it me
+
+rd
+- playtesting n' encouragement
+
+Bridgeburner
+- Doomforge hostin'
+
+TypicalSF (a.k.a. sonik.o.fan)
+- vintage eagle
+- blunderbuss
+- foehammer
+- nox launcher
+- blue gloves
+- ion cartridge & pack
+
+zrrion the insect
+- heavy spiker
+- ichor rifle (base parts)
+- spike clip
+
+Mike12
+- ichor rifle (main sprite)
+
+NoozeArts
+- vile driver
+
+Neoworm
+- axe
+
+LossForWords
+- spike box
+- first aid kit
+- trauma kit
+- PILLS HERE
+- hyper-steroids
+- holomap
+
+BouncyTEM
+- heavy spiker firing sounds
+
+ChopBlock224
+- blunderbuss muzzleflash
+- foehammer muzzleflash
+- vile driver pickup (base)
+
+MrEnchanter
+- foehammer pickup
+
+osjclatchford
+- nox launcher
+- ichor rifle (base parts)
+
+Amuscaria
+- ichor rifle (base parts)
+- ichor rifle projectile
+- vile driver projectile
+- nox projectile
+- nox ammo
+
+Blox
+- ichor rifle (base parts)
+
+Raven Software (Heretic)
+- blunderbuss projectile
+
+Banjo Software (Hacx)
+- ichor rifle (base parts)
+
+Lobotomy Software (Powerslave)
+- ichor rifle (base parts)
+
+Rogue Entertainment (Strife)
+- ichor rifle (base parts)
+
+People Can Fly (Painkiller)
+- spike impact sound
+- ichor rifle sounds
+- vile driver sounds
+
+Capcom (Devil May Cry 2)
+- vintage eagle firing sound
 
 ===========================================================================
 * Copyright / Permissions *
@@ -80,8 +233,8 @@ SOFTWARE.
 ===========================================================================
 * Where to get the file that this text file describes *
 
+https://hellforgestudios.com/doomforge/vesper/
 https://static.angryscience.net/pub/doom/mods/vesper/
-https://www.doomworld.com/idgames (somewhere in here)
 HELL
 SUPER HELL
 heaven, maybe? idk i've never been
