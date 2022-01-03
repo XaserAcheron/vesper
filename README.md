@@ -13,7 +13,7 @@ the [src/decohack](https://github.com/XaserAcheron/vesper/tree/master/src/decoha
 for a working example on how to use DECOHack to build cool new MBF21 things.
 
 Vesper is a [Doomforge](https://hellforgestudios.com/doomforge) release, so big thanks to
-Bridgeburner and the folks at [Hellforge Studios]([Doomforge](https://hellforgestudios.com)
+Bridgeburner and the folks at [Hellforge Studios](https://hellforgestudios.com)
 for hosting n' support n' all that good stuff.
 
 See [wadinfo.txt](https://github.com/XaserAcheron/vesper/blob/master/src/wadinfo.txt) for
