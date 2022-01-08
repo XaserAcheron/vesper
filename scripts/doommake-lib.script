@@ -44,6 +44,13 @@ function getProjectPK3() {
 }
 
 /**
+ * Return the project PKE file name.
+ */
+function getProjectPKE() {
+	return getProjectName() + ".pke"; 
+}
+
+/**
  * Return the project TXT file name.
  */
 function getProjectTXT() {
@@ -65,6 +72,8 @@ function getProjectZip() {
 #define DEFAULT_BUILDDIR    "build"
 #define PROP_DISTDIR        "doommake.dir.dist"
 #define DEFAULT_DISTDIR     "dist"
+#define PROP_SRCDIR         "doommake.dir.src"
+#define DEFAULT_SRCDIR      "src"
 #define PROP_IWADPATH       "doommake.iwad"
 
 /**
@@ -82,6 +91,13 @@ function getDistDirectory() {
 }
 
 /**
+ * Return the source directory path.
+ */
+function getSourceDirectory() {
+	return prop(PROP_SRCDIR, DEFAULT_SRCDIR); 
+}
+
+/**
  * Return the IWAD from properties.
  */
 function getIWAD() {
@@ -90,16 +106,128 @@ function getIWAD() {
 
 
 /* ------------------------------------------------------------------------ */
+// Build lock.
+
+#define PROP_LOCKFILE          "doommake.file.lock"
+#define DEFAULT_LOCKFILE       "lock.json"
+
+/**
+ * Return the lock file from properties.
+ */
+function getLockFile() {
+	return prop(PROP_LOCKFILE, DEFAULT_LOCKFILE); 
+}
+
+/**
+ * Returns the build lock JSON file path.
+ */
+function getBuildLockFile() {
+	return getBuildDirectory() + "/" + getLockFile();
+}
+
+/**
+ * Initialize the build lock.
+ */
+check function initBuildLock() {
+	if (typeof(global::lock) === "null") {
+		lockfile = file(getBuildLockFile());
+		global::lock = fileExists(lockfile) ? readjson(lockfile) : {};
+		if (typeof(global::lock.dirHashes) !== "map") {
+			global::lock.dirHashes = {};
+		}
+	}
+	return global::lock;
+}
+
+/**
+ * Checks if a directory changed since last build.
+ * Returns error if an error happened.
+ * Returns null if no change.
+ * Returns a hash string if a change happened.
+ */
+check function directoryHasChanged(dirpath) {
+	lockhash = initBuildLock().dirHashes->mapget(dirpath);
+	dirhash = hashdir(dirpath, true)->bufstr();
+	return (lockhash === null || lockhash !== dirhash) ? dirhash : null;
+}
+
+/**
+ * Sets if a directory changed since last build.
+ * Returns error if an error happened.
+ * Returns null if no change.
+ * Returns a hash string if a change happened.
+ */
+check function storeDirectoryChanged(dirpath, hash) {
+	lock = initBuildLock();
+	(lock.dirHashes)->mapset(dirpath, hash);
+	file(getBuildLockFile())->writejson(lock, "\t");
+}
+
+/**
+ * Initialize the build state.
+ */
+check function initBuildState() {
+	if (global::buildState === null) {
+		global::buildState = [];
+	}
+	return global::buildState;
+}
+
+/**
+ * Sets if a target was built.
+ */
+check function setBuilt(target) {
+	initBuildState()->setAdd(target);
+}
+
+/**
+ * Checks if a target was built.
+ */
+check function wasBuilt(target) {
+	return initBuildState()->setContains(target);
+}
+
+
+/****************************************************************************
+ * Checks if all provided file paths exist, 
+ * AND if all of the specified targets were NOT built.
+ *
+ * If both conditions are true, this returns true. This is used for checking
+ * if a build target needs running.
+ * 
+ * filePaths: The list of files to verify file existence.
+ * builtTargetList: The list of built target names to check for.
+ ****************************************************************************/
+function checkFileExistenceAndBuildStatuses(filePaths, builtTargetList) {
+	each (path : filePaths) {
+		if (!fileExists(path)) {
+			return false;
+		}
+	}
+	each (target : builtTargetList) {
+		if (wasBuilt(target)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+/* ------------------------------------------------------------------------ */
 // Build-specific.
 
-#define PROP_ASSETWAD       "doommake.file.assets"
-#define DEFAULT_ASSETWAD    "assets.wad"
-#define PROP_MAPSWAD        "doommake.file.maps"
-#define DEFAULT_MAPSWAD     "maps.wad"
-#define PROP_MAPTEXWAD      "doommake.file.maptex"
-#define DEFAULT_MAPTEXWAD   "maptex.wad"
-#define PROP_PATCHFILE      "doommake.file.patch"
-#define DEFAULT_PATCHFILE   "dehacked.deh"
+#define PROP_ASSETWAD         "doommake.file.assets"
+#define DEFAULT_ASSETWAD      "assets.wad"
+#define PROP_MAPSWAD          "doommake.file.maps"
+#define DEFAULT_MAPSWAD       "maps.wad"
+#define PROP_MAPTEXWAD        "doommake.file.maptex"
+#define DEFAULT_MAPTEXWAD     "maptex.wad"
+#define PROP_TEXWAD           "doommake.file.textures"
+#define DEFAULT_TEXWAD        "textures.wad"
+#define PROP_PATCHFILE        "doommake.file.patch"
+#define DEFAULT_PATCHFILE     "dehacked.deh"
+#define PROP_PATCHFILE_SRC    "doommake.file.patch.src"
+#define DEFAULT_PATCHFILE_SRC "dehsrc.dh"
 
 /**
  * Return the output asset wad.
@@ -116,6 +244,13 @@ function getMapsWAD() {
 }
 
 /**
+ * Return the output textures WAD.
+ */
+function getTextureWAD() {
+	return prop(PROP_TEXWAD, DEFAULT_TEXWAD); 
+}
+
+/**
  * Return the output map textures WAD.
  */
 function getMapTextureWAD() {
@@ -129,12 +264,75 @@ function getPatchFile() {
 	return prop(PROP_PATCHFILE, DEFAULT_PATCHFILE); 
 }
 
+/**
+ * Return the output patch source file name.
+ */
+function getPatchSourceOutputFile() {
+	return prop(PROP_PATCHFILE_SRC, DEFAULT_PATCHFILE_SRC); 
+}
+
 
 /****************************************************************************
  * Initialize build.
  ****************************************************************************/
 function initBuild() {
 	verifydirs(getBuildDirectory());
+}
+
+/****************************************************************************
+ * Fetches the source for the palette used for image conversion.
+ * Edit this function if you create the palette yourself.
+ *
+ ****************************************************************************/
+check function getConvertPaletteSource() {
+	baseIwadPath = getIwad();
+	if (empty(baseIwadPath))
+		return error("NoIWAD", "An IWAD for this project was not set in properties: " + PROP_IWADPATH);
+	return baseIwadPath;
+}
+
+/****************************************************************************
+ * Calls DImgConvert and throws an error if something bad happens.
+ * 
+ * sourceDir: The source directory path.
+ * targetDir: The target directory path.
+ * mode: One of 'palettes', 'colormaps', 'graphics', 'flats'.
+ ****************************************************************************/
+check function convert(sourceDir, targetDir, mode) {
+	if (empty(sourceDir))
+		return error("ToolError", "Source directory path not specified.");
+	if (empty(targetDir))
+		return error("ToolError", "Target directory path not specified.");
+		
+	if (tool::dimgconvert({
+		modeType: mode ?? "graphics",
+		paletteSourcePath: file(getConvertPaletteSource()),
+		sourcePath: file(sourceDir), 
+		outputPath: file(targetDir),
+		recursive: true,
+		verbose: false
+	})) return error("ToolError", "DImgConvert threw an error.");
+}
+
+/****************************************************************************
+ * Calls DMXConvert and throws an error if something bad happens.
+ * 
+ * sourceDir: The source directory path.
+ * targetDir: The target directory path.
+ ****************************************************************************/
+check function convertdmx(sourceDir, targetDir) {
+
+	files = filelist(sourceDir);
+	if (empty(files)) {
+		println("No sounds to convert.");
+		return;
+	}
+
+	if (tool::dmxconvert({
+		files: files,
+		outputdirectory: file(targetDir),
+		verbose: false
+	})) return error("ToolError", "DMXConvert threw an error.");
 }
 
 /****************************************************************************
@@ -159,8 +357,9 @@ function wadmerge(scriptFilePath, args) {
  * rootFilePath: Path to root file.
  * outFilePath: Output file.
  * budget: If true, output budget. False, don't.
+ * outSourceFilePath: Combined source output file.
  ****************************************************************************/
-function decohack(rootFilePath, outFilePath, budget) {
+function decohack(rootFilePath, outFilePath, budget, outSourceFilePath) {
 	if (empty(rootFilePath))
 		return error("ToolError", "Root file not specified.");
 	if (empty(outFilePath))
@@ -171,7 +370,8 @@ function decohack(rootFilePath, outFilePath, budget) {
 	if (tool::decohack({
 		infile: rootFilePath,
 		outfile: outFilePath,
-		outputbudget: budget
+		outputbudget: budget,
+		outsourcefile: outSourceFilePath
 	})) return error("ToolError", "DECOHack threw an error.");
 }
 
