@@ -6,6 +6,7 @@
 
 #include "classpath:decohack/mbf21.dh"
 #include "classpath:decohack/constants/friendly_things.dh"
+
 #include "defines.dh"
 
 #include "info/ammo.dh"

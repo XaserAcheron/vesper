@@ -6,7 +6,8 @@ create out
 datemarker out __VER__
 mergefile  out src/wadinfo.txt
 mergefile  out $0/$2
-mergewad   out $0/$3
+mergefile  out $0/$3
+mergewad   out $0/$4
 
 finish out $0/$1
 end
