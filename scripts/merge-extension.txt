@@ -1,0 +1,11 @@
+# ===========================================================================
+# WadMerge Script for Extensions
+# ===========================================================================
+
+create out
+datemarker out __VER__
+mergefile  out $0/$2
+mergefile  out $0/$3
+
+finish out $0/$1
+end

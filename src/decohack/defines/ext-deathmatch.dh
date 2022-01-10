@@ -1,0 +1,12 @@
+/*****************************************************************************
+ * vesper - decohack - deathmatch defines
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+// ==============
+// deathmatch balance overrides
+// ==============
+
+// [XA] TODO: this for real :P
+#define MAGNUM_DAMAGE 9999

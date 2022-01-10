@@ -21,22 +21,63 @@ function doClean() {
 
 /* ------------------------------------------------------------------------ */
 
-#define SRC_DECOHACK        "/decohack"
-#define SRC_DECOHACK_MAIN   "/main.dh"
+#define SRC_DECOHACK_DIR                 "/decohack"
+#define SRC_DECOHACK_ROOT_MAIN           "main"
+#define SRC_DECOHACK_ROOT_EXT_DEATHMATCH "ext-deathmatch"
+
+#define IN_DECOHACK_EXTENSION            ".dh"
+#define OUT_DECOHACK_PREFIX              "dehsrc-"
+#define OUT_DECOHACK_EXTENSION           ".dh"
+#define OUT_DEHACKED_PREFIX              "dehacked-"
+#define OUT_DEHACKED_EXTENSION           ".deh"
+
+/**
+ * Return the output patch file name.
+ */
+function getVesperPatchFile(rootName) {
+	return OUT_DEHACKED_PREFIX + rootName + OUT_DEHACKED_EXTENSION;
+}
+
+/**
+ * Return the output patch source file name.
+ */
+function getVesperPatchSourceOutputFile(rootName) {
+	return OUT_DECOHACK_PREFIX + rootName + OUT_DECOHACK_EXTENSION;
+}
+
+/**
+ * Return DECOHack root for the specified root name.
+ */
+function getVesperDECOHackRoot(rootName) {
+	return rootName + IN_DECOHACK_EXTENSION;
+}
 
 /**
  * Calls DECOHack.
- * Creates patch.
+ * Creates patch from the specified root file.
  */
-check function doPatch(budget) {
+check function doPatch(budget, sourceDir, rootName) {
+	outFile = getBuildDirectory() + "/" + getVesperPatchFile(rootName);
+	outSourceFile = getBuildDirectory() + "/" + getVesperPatchSourceOutputFile(rootName);
 
+	decohack(
+		file(sourceDir + "/" + getVesperDECOHackRoot(rootName)),
+		file(outFile),
+		budget,
+		file(outSourceFile)
+	);
+}
+
+/**
+ * Creates DEH patches. Word.
+ */
+check function doPatches(budget) {
 	initBuild();
 
-	outFile = getBuildDirectory() + "/" + getPatchFile();
-	outSourceFile = getBuildDirectory() + "/" + getPatchSourceOutputFile();
-	sourceDir = getSourceDirectory() + SRC_DECOHACK;
+	sourceDir = getSourceDirectory() + SRC_DECOHACK_DIR;
 	verifydirs(sourceDir);
 
+	// [XA] TODO: make this work again :P
 	if (checkFileExistenceAndBuildStatuses(outFile)) {
 		hash = directoryHasChanged(sourceDir);
 		if (hash === null) {
@@ -47,14 +88,10 @@ check function doPatch(budget) {
 		hash = directoryHasChanged(sourceDir);
 	}
 
-	println("Compiling patch...");
+	println("Compiling patches...");
 
-	decohack(
-		file(getSourceDirectory() + SRC_DECOHACK + SRC_DECOHACK_MAIN), 
-		file(outFile), 
-		budget,
-		file(outSourceFile)
-	);
+	doPatch(budget, sourceDir, SRC_DECOHACK_ROOT_MAIN);
+	doPatch(budget, sourceDir, SRC_DECOHACK_ROOT_EXT_DEATHMATCH);
 	
 	storeDirectoryChanged(sourceDir, hash);
 	setBuilt("dehacked");
@@ -182,6 +219,7 @@ check function doRun(portType, wadList, dehFile) {
 /* ------------------------------------------------------------------------ */
 
 #define MERGESCRIPT_RELEASE "scripts/merge-release.txt"
+#define MERGESCRIPT_EXTENSION "scripts/merge-extension.txt"
 #define SRC_WADINFO "src/wadinfo.txt"
 
 /**
@@ -206,22 +244,36 @@ function copyProjectTXT(destfile) {
  */
 check function doAll() {
 	initBuild();
-	doPatch(false);
+	doPatches(false);
 	doAssets();
+}
+
+/**
+ * Call wadmerge and build release wad
+ */
+function mergeRelease(mergescript, wadName, patchRoot) {
+	wadmerge(file(mergescript), [
+		getBuildDirectory()
+		,wadName
+		,getVesperPatchFile(patchRoot)
+		,getVesperPatchSourceOutputFile(patchRoot)
+		,getAssetsWAD()
+	]);
+}
+
+/**
+ * Return the project WAD file name.
+ */
+function getVesperExtensionWAD(patchRoot) {
+	return getProjectName() + "-" + patchRoot + ".wad"; 
 }
 
 /**
  * Merges all components into the project file and creates the distributable.
  */
 check function doRelease() {
-
-	wadmerge(file(MERGESCRIPT_RELEASE), [
-		getBuildDirectory()
-		,getProjectWad()
-		,getPatchFile()
-		,getPatchSourceOutputFile()
-		,getAssetsWAD()
-	]);
+	mergeRelease(MERGESCRIPT_RELEASE, getProjectWad(), SRC_DECOHACK_ROOT_MAIN);
+	mergeRelease(MERGESCRIPT_EXTENSION, getVesperExtensionWAD(SRC_DECOHACK_ROOT_EXT_DEATHMATCH), SRC_DECOHACK_ROOT_EXT_DEATHMATCH);
 
 	// Assemble project archive.
 	initDist();
@@ -261,11 +313,11 @@ check entry clean(args) {
 /*****************************************************************************
  * TARGET: patch
  *****************************************************************************
- * Compiles the DeHackEd patch (and shows the budget).
+ * Compiles the DeHackEd patches (and shows the budget).
  * doommake patch
  ****************************************************************************/
 check entry patch(args) {
-	doPatch(true);
+	doPatches(true);
 }
 
 /*****************************************************************************

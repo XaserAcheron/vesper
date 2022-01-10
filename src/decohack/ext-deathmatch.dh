@@ -1,5 +1,5 @@
 /*****************************************************************************
- * vesper - decohack - main
+ * vesper - decohack - extension - deathmatch
  * (c) xaser acheron 2021
  *     MIT License
  ****************************************************************************/
@@ -8,6 +8,7 @@
 #include "classpath:decohack/constants/friendly_things.dh"
 
 #include "defines/main.dh"
+#include "defines/ext-deathmatch.dh"
 
 #include "info/ammo.dh"
 #include "info/strings.dh"
