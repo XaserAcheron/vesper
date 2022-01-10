@@ -8,6 +8,9 @@
 // deathmatch balance overrides
 // ==============
 
+#define AXE_DAMAGE_BASE 150
+#define AXE_DAMAGE_ZERK 1.0
+
 #define BLUNDERBUSS_SHOT_1_ANGLE 0.0
 #define BLUNDERBUSS_SHOT_2_ANGLE 3.0
 #define BLUNDERBUSS_SHOT_3_ANGLE 6.0

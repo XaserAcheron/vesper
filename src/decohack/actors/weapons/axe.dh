@@ -28,7 +28,7 @@ weapon WP_CHAINSAW "Axe"
 			hold:
 			SAWG D 2 A_WeaponSound(sound DSAXESWG)
 			SAWG E 2
-			SAWG F 2 A_WeaponMeleeAttack(10, 10, 5.0, sound DSAXEHIT, 96.0)
+			SAWG F 2 A_WeaponMeleeAttack(AXE_DAMAGE_BASE, AXE_DAMAGE_DICE, AXE_DAMAGE_ZERK, sound DSAXEHIT, AXE_RANGE)
 			SAWG GH 2
 			TNT1 A 12
 			SAWG C 2 A_ReFireTo(hold)
