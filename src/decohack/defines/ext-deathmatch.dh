@@ -8,5 +8,9 @@
 // deathmatch balance overrides
 // ==============
 
-// [XA] TODO: this for real :P
-#define MAGNUM_DAMAGE 9999
+#define BLUNDERBUSS_SHOT_1_ANGLE 0.0
+#define BLUNDERBUSS_SHOT_2_ANGLE 3.0
+#define BLUNDERBUSS_SHOT_3_ANGLE 6.0
+#define BLUNDERBUSS_SHOT_1_VELOCITY 30
+#define BLUNDERBUSS_SHOT_2_VELOCITY 30
+#define BLUNDERBUSS_SHOT_3_VELOCITY 30
