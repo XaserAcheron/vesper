@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_PLASMA "Ichor Rifle"
+weapon Ichor "Ichor Rifle"
 {
 	ammotype AM_CELL
 	ammopershot 3
@@ -38,21 +38,21 @@ weapon WP_PLASMA "Ichor Rifle"
 		/* fire states */
 
 		fire:
-			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
+			PLSG A 0 A_WeaponProjectile(thing IchorShot, 0.0, 0.0, 0.0, -2.0)
 			PLSG A 0 A_ConsumeAmmo(1)
 			PLSG A 0 A_GunFlashTo(flash1)
 			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
 			PLSG A 1 Offset(3, 40)
 			PLSG A 1 Offset(2, 38)
 
-			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
+			PLSG A 0 A_WeaponProjectile(thing IchorShot, 0.0, 0.0, 0.0, -2.0)
 			PLSG A 0 A_ConsumeAmmo(1)
 			PLSG A 0 A_GunFlashTo(flash2)
 			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
 			PLSG A 1 Offset(-1, 40)
 			PLSG A 1 Offset(-1, 38)
 
-			PLSG A 0 A_WeaponProjectile(XTF_ICHOR_SHOT, 0.0, 0.0, 0.0, -2.0)
+			PLSG A 0 A_WeaponProjectile(thing IchorShot, 0.0, 0.0, 0.0, -2.0)
 			PLSG A 0 A_ConsumeAmmo(1)
 			PLSG A 0 A_GunFlashTo(flash1)
 			PLSG A 1 Offset(1, 36) A_WeaponSound(sound DSICHFIR)
@@ -72,7 +72,7 @@ weapon WP_PLASMA "Ichor Rifle"
 	}
 }
 
-thing XTF_ICHOR_SHOT "Ichor Bolt"
+thing IchorShot "Ichor Bolt"
 {
 	Damage ICHOR_DAMAGE
 	Speed ICHOR_VELOCITY
@@ -91,7 +91,7 @@ thing XTF_ICHOR_SHOT "Ichor Bolt"
 	states
 	{
 		spawn:
-			ICHR A 0 Bright A_SpawnObject(XTF_ICHOR_TRAIL)
+			ICHR A 0 Bright A_SpawnObject(thing IchorTrail)
 			ICHR A 0 Bright A_FindTracer(ICHOR_SEEK_FOV)
 			ICHR A 1 Bright A_SeekTracer(ICHOR_SEEK_THRESHOLD, ICHOR_SEEK_ANGLE)
 			loop
@@ -102,7 +102,7 @@ thing XTF_ICHOR_SHOT "Ichor Bolt"
 	}
 }
 
-thing XTF_ICHOR_TRAIL "Ichor Trail"
+thing IchorTrail "Ichor Trail"
 {
 	Radius 4
 	Height 8

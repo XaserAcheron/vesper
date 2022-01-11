@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_SUPERSHOTGUN "Foe Hammer"
+weapon Hammer "Foe Hammer"
 {
 	ammotype AM_SHELL
 	ammopershot 3
@@ -24,15 +24,15 @@ weapon WP_SUPERSHOTGUN "Foe Hammer"
 			loop
 		fire:
 			SHT2 B 0 Bright A_WeaponBulletAttack(HAMMER_BULLET_HSPREAD, HAMMER_BULLET_VSPREAD, HAMMER_BULLET_COUNT, HAMMER_BULLET_DAMAGE)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      , -30.0, 0.0,-8.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS, -22.5, 0.0,-6.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      , -15.0, 0.0,-4.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS,  -7.5, 0.0,-2.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      ,   0.0, 0.0, 0.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS,   7.5, 0.0, 2.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      ,  15.0, 0.0, 4.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE_INVIS,  22.5, 0.0, 6.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(XTF_HAMMER_WAVE      ,  30.0, 0.0, 8.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     , -30.0, 0.0,-8.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis, -22.5, 0.0,-6.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     , -15.0, 0.0,-4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis,  -7.5, 0.0,-2.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     ,   0.0, 0.0, 0.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis,   7.5, 0.0, 2.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     ,  15.0, 0.0, 4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis,  22.5, 0.0, 6.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     ,  30.0, 0.0, 8.0, -4.0)
 			SHT2 B 0 Bright A_ConsumeAmmo
 			SHT2 B 0 Bright A_WeaponSound(sound DSHAMFIR)
 			SHT2 B 1 Bright A_GunFlash
@@ -60,7 +60,7 @@ weapon WP_SUPERSHOTGUN "Foe Hammer"
 	}
 }
 
-thing XTF_HAMMER_WAVE "Hammer Wave"
+thing HammerWave "Hammer Wave"
 {
 	Damage HAMMER_WAVE_DAMAGE
 	Speed HAMMER_WAVE_VELOCITY
@@ -77,7 +77,7 @@ thing XTF_HAMMER_WAVE "Hammer Wave"
 	states
 	{
 		spawn:
-			TNT1 AAAAAAAAAA 1 Bright A_SpawnObject(XTF_HAMMER_WAVE_TRAIL)
+			TNT1 AAAAAAAAAA 1 Bright A_SpawnObject(thing HammerWaveTrail)
 			stop
 		death:
 			TNT1 A 1
@@ -85,7 +85,7 @@ thing XTF_HAMMER_WAVE "Hammer Wave"
 	}
 }
 
-thing XTF_HAMMER_WAVE_INVIS : thing XTF_HAMMER_WAVE "Hammer Wave (Invisible)"
+thing HammerWaveInvis : thing HammerWave "Hammer Wave (Invisible)"
 {
 	states
 	{
@@ -95,7 +95,7 @@ thing XTF_HAMMER_WAVE_INVIS : thing XTF_HAMMER_WAVE "Hammer Wave (Invisible)"
 	}
 }
 
-thing XTF_HAMMER_WAVE_TRAIL "Hammer Wave Trail"
+thing HammerWaveTrail "Hammer Wave Trail"
 {
 	Radius 4
 	Height 8

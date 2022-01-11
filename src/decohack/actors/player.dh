@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-thing MTF_PLAYER "Vesper"
+thing VesperPlayer "Vesper"
 {
 	states
 	{
@@ -20,5 +20,5 @@ thing MTF_PLAYER "Vesper"
 // modify this in place since player states are temperamental
 state S_PLAY_PAIN
 {
-	goto thing MTF_PLAYER painchoice
+	goto thing VesperPlayer painchoice
 }

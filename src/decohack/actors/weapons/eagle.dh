@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_PISTOL "Vintage Eagle"
+weapon Eagle "Vintage Eagle"
 {
 	ammotype AM_CLIP
 	clear states
@@ -44,7 +44,7 @@ weapon WP_PISTOL "Vintage Eagle"
 			PISG F 1 Offset(1, 44)
 			PISG A 1 Offset(1, 40)
 			PISG A 1 Offset(1, 36)
-			PISG A 0 A_RefireTo(weapon WP_PISTOL slowfire)
+			PISG A 0 A_RefireTo(weapon Eagle slowfire)
 			goto ready
 		flash:
 			PISF A 2 Bright A_Light1

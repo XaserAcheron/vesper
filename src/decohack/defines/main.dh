@@ -5,6 +5,20 @@
  ****************************************************************************/
 
 // ==============
+// weapon aliases
+// ==============
+
+alias weapon Fists       WP_FIST
+alias weapon Axe         WP_CHAINSAW
+alias weapon Eagle       WP_PISTOL
+alias weapon Blunderbuss WP_SHOTGUN
+alias weapon Hammer      WP_SUPERSHOTGUN
+alias weapon Spiker      WP_CHAINGUN
+alias weapon Nox         WP_MISSILE
+alias weapon Ichor       WP_PLASMA
+alias weapon Vile        WP_BFG
+
+// ==============
 // sprite aliases
 // ==============
 
@@ -23,34 +37,36 @@
 #define BILE SP05
 
 // ==============
-// dehnums
+// thing aliases
 // ==============
 
-#define XTF_BLUNDERBUSS_SHOT_1 155
-#define XTF_BLUNDERBUSS_SHOT_2 156
-#define XTF_BLUNDERBUSS_SHOT_3 157
+alias thing VesperPlayer MTF_PLAYER
 
-#define XTF_HAMMER_WAVE       160
-#define XTF_HAMMER_WAVE_INVIS 165
-#define XTF_HAMMER_WAVE_TRAIL 161
+alias thing BlunderbussShot1 155
+alias thing BlunderbussShot2 156
+alias thing BlunderbussShot3 157
 
-#define DEHNUM_SPIKE_SHOT_LEFT  151
-#define DEHNUM_SPIKE_SHOT_RIGHT 152
-#define DEHNUM_SPIKE_TRAIL      153
+alias thing HammerWave      160
+alias thing HammerWaveInvis 165
+alias thing HammerWaveTrail 161
 
-#define XTF_NOX_GRENADE     166
-#define XTF_NOX_TRAIL       167
-#define XTF_NOX_EXPLOSION_1 168
-#define XTF_NOX_EXPLOSION_2 169
-#define XTF_NOX_EXPLOSION_3 170
-#define XTF_NOX_GAS_CLOUD   171
+alias thing SpikeShotLeft  151
+alias thing SpikeShotRight 152
+alias thing SpikeTrail     153
 
-#define XTF_ICHOR_SHOT  158
-#define XTF_ICHOR_TRAIL 159
+alias thing NoxGrenade    166
+alias thing NoxTrail      167
+alias thing NoxExplosion1 168
+alias thing NoxExplosion2 169
+alias thing NoxExplosion3 170
+alias thing NoxGasCloud   171
 
-#define XTF_VILE_SHOT_1 162
-#define XTF_VILE_SHOT_2 163
-#define XTF_VILE_TRAIL  164
+alias thing IchorShot  158
+alias thing IchorTrail 159
+
+alias thing VileShot1 162
+alias thing VileShot2 163
+alias thing VileTrail 164
 
 // ==============
 // sound aliases

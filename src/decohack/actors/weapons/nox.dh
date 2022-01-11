@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_MISSILE "Nox Launcher"
+weapon Nox "Nox Launcher"
 {
 	ammotype AM_MISL
 	ammopershot 1
@@ -25,7 +25,7 @@ weapon WP_MISSILE "Nox Launcher"
 		fire:
 			MISF A 2 Bright A_GunFlash()
 			MISF B 0 Bright A_ConsumeAmmo(1)
-			MISF B 0 Bright A_WeaponProjectile(XTF_NOX_GRENADE, 0.0, 0.0, 0.0, -2.0)
+			MISF B 0 Bright A_WeaponProjectile(thing NoxGrenade, 0.0, 0.0, 0.0, -2.0)
 			MISF B 2 Bright A_WeaponSound(sound DSNOXFIR)
 			MISF CDEFG 2
 			MISG A 3
@@ -65,7 +65,7 @@ weapon WP_MISSILE "Nox Launcher"
 	}
 }
 
-thing XTF_NOX_GRENADE "Nox Grenade"
+thing NoxGrenade "Nox Grenade"
 {
 	Damage NOX_GRENADE_IMPACT_DAMAGE
 	Speed NOX_GRENADE_VELOCITY
@@ -83,39 +83,39 @@ thing XTF_NOX_GRENADE "Nox Grenade"
 	states
 	{
 		spawn:
-			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 1.500, 0.000)
-			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-1.500, 0.000)
-			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 1.299, 0.750)
-			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-1.299,-0.750)
-			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.750, 1.299)
-			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000,-1.500)
-			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000, 1.500)
-			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-0.750,-1.299)
-			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-0.750, 1.299)
-			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 0.750,-1.299)
-			NOXG A 0 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0,-1.299, 0.750)
-			NOXG A 1 Bright A_SpawnObject(XTF_NOX_TRAIL, 0.0, 0.0, 0.0, 0.0, 0.0, 1.299,-0.750)
+			NOXG A 0 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0, 1.500, 0.000)
+			NOXG A 1 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0,-1.500, 0.000)
+			NOXG A 0 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0, 1.299, 0.750)
+			NOXG A 1 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0,-1.299,-0.750)
+			NOXG A 0 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0, 0.750, 1.299)
+			NOXG A 1 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000,-1.500)
+			NOXG A 0 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0, 0.000, 1.500)
+			NOXG A 1 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0,-0.750,-1.299)
+			NOXG A 0 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0,-0.750, 1.299)
+			NOXG A 1 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0, 0.750,-1.299)
+			NOXG A 0 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0,-1.299, 0.750)
+			NOXG A 1 Bright A_SpawnObject(thing NoxTrail, 0.0, 0.0, 0.0, 0.0, 0.0, 1.299,-0.750)
 			loop
 		death:
 			NOXG H 1 Bright A_RadiusDamage(NOX_GRENADE_SPLASH_DAMAGE, NOX_GRENADE_SPLASH_RADIUS)
 			NOXG HI 1 Bright
 			NOXG B 0 Bright A_AddFlags(MISSILE)
-			NOXG B 0 Bright A_SpawnObject(XTF_NOX_GAS_CLOUD)
+			NOXG B 0 Bright A_SpawnObject(thing NoxGasCloud)
 			NOXG B 2 Bright A_RemoveFlags(MISSILE)
-			NOXG C 0 Bright A_SpawnObject(XTF_NOX_EXPLOSION_1,  30.0, 48.0, 0.0, 0.0)
-			NOXG C 2 Bright A_SpawnObject(XTF_NOX_EXPLOSION_2, 210.0, 48.0, 0.0, 0.0)
+			NOXG C 0 Bright A_SpawnObject(thing NoxExplosion1,  30.0, 48.0, 0.0, 0.0)
+			NOXG C 2 Bright A_SpawnObject(thing NoxExplosion2, 210.0, 48.0, 0.0, 0.0)
 			NOXG D 2 Bright
-			NOXG E 0 Bright A_SpawnObject(XTF_NOX_EXPLOSION_2, 150.0, 48.0, 0.0, 0.0)
-			NOXG E 2 Bright A_SpawnObject(XTF_NOX_EXPLOSION_3, 230.0, 48.0, 0.0, 0.0)
+			NOXG E 0 Bright A_SpawnObject(thing NoxExplosion2, 150.0, 48.0, 0.0, 0.0)
+			NOXG E 2 Bright A_SpawnObject(thing NoxExplosion3, 230.0, 48.0, 0.0, 0.0)
 			NOXG F 2 Bright
-			NOXG G 0 Bright A_SpawnObject(XTF_NOX_EXPLOSION_3,  90.0, 48.0, 0.0, 0.0)
-			NOXG G 4 Bright A_SpawnObject(XTF_NOX_EXPLOSION_1, 270.0, 48.0, 0.0, 0.0)
+			NOXG G 0 Bright A_SpawnObject(thing NoxExplosion3,  90.0, 48.0, 0.0, 0.0)
+			NOXG G 4 Bright A_SpawnObject(thing NoxExplosion1, 270.0, 48.0, 0.0, 0.0)
 			TNT1 A 30
 			stop
 	}
 }
 
-thing XTF_NOX_TRAIL "Nox Trail"
+thing NoxTrail "Nox Trail"
 {
 	Radius 4
 	Height 8
@@ -132,7 +132,7 @@ thing XTF_NOX_TRAIL "Nox Trail"
 	}
 }
 
-thing XTF_NOX_EXPLOSION_1 "Nox Explosion 1"
+thing NoxExplosion1 "Nox Explosion 1"
 {
 	Radius 4
 	Height 8
@@ -154,17 +154,17 @@ thing XTF_NOX_EXPLOSION_1 "Nox Explosion 1"
 	}
 }
 
-thing XTF_NOX_EXPLOSION_2 : thing XTF_NOX_EXPLOSION_1 "Nox Explosion 2"
+thing NoxExplosion2 : thing NoxExplosion1 "Nox Explosion 2"
 {
 	DeathSound DSNOXPL2
 }
 
-thing XTF_NOX_EXPLOSION_3 : thing XTF_NOX_EXPLOSION_1 "Nox Explosion 3"
+thing NoxExplosion3 : thing NoxExplosion1 "Nox Explosion 3"
 {
 	DeathSound DSNOXPL3
 }
 
-thing XTF_NOX_GAS_CLOUD "Nox Gas Cloud"
+thing NoxGasCloud "Nox Gas Cloud"
 {
 	Damage 0
 	Speed 0

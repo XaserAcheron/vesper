@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_BFG "Vile Driver"
+weapon Vile "Vile Driver"
 {
 	ammotype AM_CELL
 	ammopershot 6
@@ -46,20 +46,20 @@ weapon WP_BFG "Vile Driver"
 			BFGF FGHFGHFGH 1
 			BFGF I 0 Bright A_WeaponSound(sound DSVIDSTR)
 		hold:
-			BFGF I 0 Bright A_WeaponProjectile(XTF_VILE_SHOT_1, -3.078,-1.000, 0.0, -2.0)
-			BFGF I 0 Bright A_WeaponProjectile(XTF_VILE_SHOT_2,  3.078,-1.000, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(thing VileShot1, -3.078,-1.000, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(thing VileShot2,  3.078,-1.000, 0.0, -2.0)
 			BFGF I 0 Bright A_ConsumeAmmo(2)
 			BFGF I 1 Bright Offset(1, 32) A_GunFlash()
 			BFGF J 1 Bright Offset(3, 34)
 			BFGF K 1 Bright Offset(2, 33)
-			BFGF I 0 Bright A_WeaponProjectile(XTF_VILE_SHOT_1,  0.000,-3.236, 0.0, -2.0)
-			BFGF I 0 Bright A_WeaponProjectile(XTF_VILE_SHOT_2,  2.618, 1.902, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(thing VileShot1,  0.000,-3.236, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(thing VileShot2,  2.618, 1.902, 0.0, -2.0)
 			BFGF I 0 Bright A_ConsumeAmmo(2)
 			BFGF I 1 Bright Offset( 1, 32) A_GunFlash()
 			BFGF J 1 Bright Offset(-1, 34)
 			BFGF K 1 Bright Offset(-1, 33)
-			BFGF I 0 Bright A_WeaponProjectile(XTF_VILE_SHOT_1,  0.000,-3.236, 0.0, -2.0)
-			BFGF I 0 Bright A_WeaponProjectile(XTF_VILE_SHOT_2, -2.618, 1.902, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(thing VileShot1,  0.000,-3.236, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(thing VileShot2, -2.618, 1.902, 0.0, -2.0)
 			BFGF I 0 Bright A_ConsumeAmmo(2)
 			BFGF I 1 Bright Offset(1, 32) A_GunFlash()
 			BFGF J 1 Bright Offset(1, 34)
@@ -80,7 +80,7 @@ weapon WP_BFG "Vile Driver"
 	}
 }
 
-thing XTF_VILE_SHOT_1 "Vile Bolt"
+thing VileShot1 "Vile Bolt"
 {
 	Damage VILE_DAMAGE
 	Speed VILE_VELOCITY
@@ -99,12 +99,12 @@ thing XTF_VILE_SHOT_1 "Vile Bolt"
 	states
 	{
 		seek:
-			BILE A 0 Bright A_SpawnObject(XTF_VILE_TRAIL)
+			BILE A 0 Bright A_SpawnObject(thing VileTrail)
 			BILE A 1 Bright A_SeekTracer(VILE_SEEK_THRESHOLD, VILE_SEEK_ANGLE)
 		tryseek:
 			BILE A 0 Bright A_JumpIfTracerInSight(seek)
 		spawn:
-			BILE AAAAAAAA 1 Bright A_SpawnObject(XTF_VILE_TRAIL)
+			BILE AAAAAAAA 1 Bright A_SpawnObject(thing VileTrail)
 			BILE A 0 Bright A_FindTracer(VILE_SEEK_FOV)
 			goto tryseek
 		death:
@@ -114,12 +114,12 @@ thing XTF_VILE_SHOT_1 "Vile Bolt"
 	}
 }
 
-thing XTF_VILE_SHOT_2 : thing XTF_VILE_SHOT_1 "Vile Bolt (Quiet)"
+thing VileShot2 : thing VileShot1 "Vile Bolt (Quiet)"
 {
 	SeeSound ""
 }
 
-thing XTF_VILE_TRAIL "Vile Trail"
+thing VileTrail "Vile Trail"
 {
 	Radius 4
 	Height 8

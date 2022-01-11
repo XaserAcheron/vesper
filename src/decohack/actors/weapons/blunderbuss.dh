@@ -4,7 +4,7 @@
  *     MIT License
  ****************************************************************************/
 
-weapon WP_SHOTGUN "Blunderbuss"
+weapon Blunderbuss "Blunderbuss"
 {
 	ammotype AM_SHELL
 	clear states
@@ -22,11 +22,11 @@ weapon WP_SHOTGUN "Blunderbuss"
 			SHTG A 1 A_Raise
 			loop
 		fire:
-			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_3, -BLUNDERBUSS_SHOT_3_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_2, -BLUNDERBUSS_SHOT_2_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_1,  BLUNDERBUSS_SHOT_1_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_2,  BLUNDERBUSS_SHOT_2_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(XTF_BLUNDERBUSS_SHOT_3,  BLUNDERBUSS_SHOT_3_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot3, -BLUNDERBUSS_SHOT_3_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot2, -BLUNDERBUSS_SHOT_2_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot1,  BLUNDERBUSS_SHOT_1_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot2,  BLUNDERBUSS_SHOT_2_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot3,  BLUNDERBUSS_SHOT_3_ANGLE)
 			SHTF A 0 Bright A_ConsumeAmmo
 			SHTF A 0 Bright A_WeaponSound(sound DSBUSFIR)
 			SHTF A 1 Bright A_GunFlash
@@ -53,7 +53,7 @@ weapon WP_SHOTGUN "Blunderbuss"
 	}
 }
 
-thing XTF_BLUNDERBUSS_SHOT_1 "Blunderbuss Shot 1"
+thing BlunderbussShot1 "Blunderbuss Shot 1"
 {
 	Damage BLUNDERBUSS_SHOT_1_DAMAGE
 	Speed BLUNDERBUSS_SHOT_1_VELOCITY
@@ -82,7 +82,7 @@ thing XTF_BLUNDERBUSS_SHOT_1 "Blunderbuss Shot 1"
 	}
 }
 
-thing XTF_BLUNDERBUSS_SHOT_2 : thing XTF_BLUNDERBUSS_SHOT_1 "Blunderbuss Shot 2"
+thing BlunderbussShot2 : thing BlunderbussShot1 "Blunderbuss Shot 2"
 {
 	Damage BLUNDERBUSS_SHOT_2_DAMAGE
 	Speed BLUNDERBUSS_SHOT_2_VELOCITY
@@ -95,7 +95,7 @@ thing XTF_BLUNDERBUSS_SHOT_2 : thing XTF_BLUNDERBUSS_SHOT_1 "Blunderbuss Shot 2"
 	}
 }
 
-thing XTF_BLUNDERBUSS_SHOT_3 : thing XTF_BLUNDERBUSS_SHOT_2 "Blunderbuss Shot 3"
+thing BlunderbussShot3 : thing BlunderbussShot2 "Blunderbuss Shot 3"
 {
 	Damage BLUNDERBUSS_SHOT_3_DAMAGE
 	Speed BLUNDERBUSS_SHOT_3_VELOCITY
