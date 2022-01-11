@@ -42,31 +42,31 @@ alias weapon Vile        WP_BFG
 
 alias thing VesperPlayer MTF_PLAYER
 
-alias thing BlunderbussShot1 155
-alias thing BlunderbussShot2 156
-alias thing BlunderbussShot3 157
+auto thing BlunderbussShot1 {}
+auto thing BlunderbussShot2 {}
+auto thing BlunderbussShot3 {}
 
-alias thing HammerWave      160
-alias thing HammerWaveInvis 165
-alias thing HammerWaveTrail 161
+auto thing HammerWave {}
+auto thing HammerWaveInvis {}
+auto thing HammerWaveTrail {}
 
-alias thing SpikeShotLeft  151
-alias thing SpikeShotRight 152
-alias thing SpikeTrail     153
+auto thing SpikeShotLeft {}
+auto thing SpikeShotRight {}
+auto thing SpikeTrail {}
 
-alias thing NoxGrenade    166
-alias thing NoxTrail      167
-alias thing NoxExplosion1 168
-alias thing NoxExplosion2 169
-alias thing NoxExplosion3 170
-alias thing NoxGasCloud   171
+auto thing NoxGrenade {}
+auto thing NoxTrail {}
+auto thing NoxExplosion1 {}
+auto thing NoxExplosion2 {}
+auto thing NoxExplosion3 {}
+auto thing NoxGasCloud {}
 
-alias thing IchorShot  158
-alias thing IchorTrail 159
+auto thing IchorShot {}
+auto thing IchorTrail {}
 
-alias thing VileShot1 162
-alias thing VileShot2 163
-alias thing VileTrail 164
+auto thing VileShot1 {}
+auto thing VileShot2 {}
+auto thing VileTrail {}
 
 // ==============
 // sound aliases
