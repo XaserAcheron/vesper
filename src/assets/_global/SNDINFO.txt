@@ -1,0 +1,12 @@
+/*****************************************************************************
+ * vesper - gzdoom sndinfo tweaks
+ * (c) xaser acheron 2021
+ *     MIT License
+ ****************************************************************************/
+
+// shut off the chainsaw idle sound, 'cause it's an axe now. :P
+weapons/sawidle ""
+
+// limitless potential!
+$limit dehextra/sound010 0 // ichor rifle firing sound
+$limit dehextra/sound023 0 // vile driver firing sound
