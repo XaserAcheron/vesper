@@ -91,10 +91,20 @@ thing IchorShot "Ichor Bolt"
 	states
 	{
 		spawn:
-			ICHR A 0 Bright A_SpawnObject(thing IchorTrail)
+			ICHR AAAA 1 Bright A_SpawnObject(thing IchorTrail)
 			ICHR A 0 Bright A_FindTracer(ICHOR_SEEK_FOV)
+		tryseek:
+			ICHR A 0 Bright A_JumpIfTracerInSight(seek)
+			goto spawn
+		seek:
+			ICHR A 0 Bright A_SpawnObject(thing IchorTrail)
 			ICHR A 1 Bright A_SeekTracer(ICHOR_SEEK_THRESHOLD, ICHOR_SEEK_ANGLE)
-			loop
+			// in deathmatch, don't pick a new target if initial target dies
+			#ifdef EXT_DEATHMATCH
+				loop
+			#else
+				goto tryseek
+			#endif
 		death:
 			ICHR H 4 Bright A_AddFlags(TRANSLUCENT, 0)
 			ICHR IJKLM 4 Bright

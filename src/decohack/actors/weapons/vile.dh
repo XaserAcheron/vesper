@@ -101,6 +101,10 @@ thing VileShot1 "Vile Bolt"
 		seek:
 			BILE A 0 Bright A_SpawnObject(thing VileTrail)
 			BILE A 1 Bright A_SeekTracer(VILE_SEEK_THRESHOLD, VILE_SEEK_ANGLE)
+			// in deathmatch, don't pick a new target if initial target dies
+			#ifdef EXT_DEATHMATCH
+				loop
+			#endif
 		tryseek:
 			BILE A 0 Bright A_JumpIfTracerInSight(seek)
 		spawn:

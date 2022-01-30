@@ -8,6 +8,8 @@
 // deathmatch balance overrides
 // ==============
 
+#define EXT_DEATHMATCH
+
 #define AXE_DAMAGE_BASE 150
 #define AXE_DAMAGE_ZERK 1.0
 
