@@ -1,0 +1,377 @@
+// DelphiDoom light definitions for XA-VESPER
+// Version WIP_20220125 or higher
+
+//------------------------------
+pointlight L_SP00A
+{
+    color 0.7 0.7 0.0
+    size 24
+}
+
+flickerlight L_SP00BCD
+{
+    color 0.7 0.7 0.0
+    size 32
+    secondarySize 40
+    chance 0.3
+}
+
+frame SP00A { light L_SP00A }
+frame SP00B { light L_SP00BCD }
+frame SP00C { light L_SP00BCD }
+frame SP00D { light L_SP00BCD }
+
+//------------------------------
+pointlight L_SP01A
+{
+    color 0.4 0.7 0.3
+    size 72
+}
+
+flickerlight L_SP01BCDEFGHI
+{
+    color 0.4 0.7 0.3
+    size 80
+    secondarySize 96
+    chance 0.5
+}
+
+frame SP01A { light L_SP01A }
+frame SP01B { light L_SP01BCDEFGHI }
+frame SP01C { light L_SP01BCDEFGHI }
+frame SP01D { light L_SP01BCDEFGHI }
+frame SP01E { light L_SP01BCDEFGHI }
+frame SP01F { light L_SP01BCDEFGHI }
+frame SP01G { light L_SP01BCDEFGHI }
+frame SP01H { light L_SP01BCDEFGHI }
+frame SP01I { light L_SP01BCDEFGHI }
+
+//------------------------------
+pointlight L_SP02
+{
+    color 0.0 0.0 0.8
+    size 40
+}
+
+frame SP02A { light L_SP02 }
+frame SP02B { light L_SP02 }
+frame SP02C { light L_SP02 }
+frame SP02D { light L_SP02 }
+
+//------------------------------
+pointlight L_SP03A
+{
+    color 0.3 0.03 0.9
+    size 32
+}
+
+flickerlight L_SP03B
+{
+    color 0.3 0.3 0.9
+    size 40
+    secondarySize 48
+    chance 0.5
+}
+
+flickerlight L_SP03C
+{
+    color 0.3 0.3 1.0
+    size 48
+    secondarySize 56
+    chance 0.5
+}
+
+flickerlight L_SP03D
+{
+    color 0.3 0.3 1.0
+    size 56
+    secondarySize 64
+    chance 0.5
+}
+
+flickerlight L_SP03E
+{
+    color 0.0 0.0 0.8
+    size 56
+    secondarySize 64
+    chance 0.5
+}
+
+flickerlight L_SP03F
+{
+    color 0.0 0.0 0.6
+    size 56
+    secondarySize 64
+    chance 0.5
+}
+
+frame SP03A { light L_SP03A }
+frame SP03B { light L_SP03B }
+frame SP03C { light L_SP03C }
+frame SP03D { light L_SP03D }
+frame SP03E { light L_SP03E }
+frame SP03F { light L_SP03F }
+
+//------------------------------
+pointlight L_SP04AB
+{
+    color 0.8 0.0 0.0
+    size 32
+}
+
+pointlight L_SP04CDEFG
+{
+    color 0.7 0.0 0.0
+    size 24
+}
+
+flickerlight L_SP04HIJK
+{
+    color 0.8 0.0 0.0
+    size 40
+    secondarySize 48
+    chance 0.3
+}
+
+flickerlight L_SP04L
+{
+    color 0.7 0.0 0.0
+    size 40
+    secondarySize 48
+    chance 0.3
+}
+
+flickerlight L_SP04M
+{
+    color 0.6 0.0 0.0
+    size 40
+    secondarySize 48
+    chance 0.3
+}
+
+frame SP04A { light L_SP04AB }
+//frame SP04B { light L_SP04AB }
+frame SP04C { light L_SP04CDEFG }
+frame SP04D { light L_SP04CDEFG }
+frame SP04E { light L_SP04CDEFG }
+frame SP04F { light L_SP04CDEFG }
+frame SP04G { light L_SP04CDEFG }
+frame SP04H { light L_SP04HIJK }
+frame SP04I { light L_SP04HIJK }
+frame SP04J { light L_SP04HIJK }
+frame SP04K { light L_SP04HIJK }
+frame SP04L { light L_SP04L }
+frame SP04M { light L_SP04M }
+
+//------------------------------
+pointlight L_SP05AB
+{
+    color 0.3 0.9 0.2
+    size 32
+}
+
+pointlight L_SP05CDEFG
+{
+    color 0.3 0.8 0.2
+    size 24
+}
+
+flickerlight L_SP05HIJKLM
+{
+    color 0.3 0.9 0.2
+    size 40
+    secondarySize 48
+    chance 0.5
+}
+
+frame SP05A { light L_SP05AB }
+//frame SP05B { light L_SP05AB }
+frame SP05C { light L_SP05CDEFG }
+frame SP05D { light L_SP05CDEFG }
+frame SP05E { light L_SP05CDEFG }
+frame SP05F { light L_SP05CDEFG }
+frame SP05G { light L_SP05CDEFG }
+frame SP05H { light L_SP05HIJKLM }
+frame SP05I { light L_SP05HIJKLM }
+frame SP05J { light L_SP05HIJKLM }
+frame SP05K { light L_SP05HIJKLM }
+frame SP05L { light L_SP05HIJKLM }
+frame SP05M { light L_SP05HIJKLM }
+
+//------------------------------
+flickerlight L_SP06A
+{
+    color 0.4 0.9 0.4
+    size 64
+    secondarySize 72
+    chance 0.5
+}
+
+flickerlight L_SP06B
+{
+    color 0.4 0.9 0.4
+    size 72
+    secondarySize 80
+    chance 0.5
+}
+
+flickerlight L_SP06C
+{
+    color 0.4 1.0 0.4
+    size 80
+    secondarySize 96
+    chance 0.5
+}
+
+
+flickerlight L_SP06D
+{
+    color 0.3 0.8 0.3
+    size 80
+    secondarySize 96
+    chance 0.5
+}
+
+flickerlight L_SP06E
+{
+    color 0.2 0.7 0.2
+    size 80
+    secondarySize 96
+    chance 0.5
+}
+
+frame SP06A { light L_SP06A }
+frame SP06B { light L_SP06B }
+frame SP06C { light L_SP06C }
+frame SP06D { light L_SP06D }
+frame SP06E { light L_SP06E }
+
+//------------------------------
+flickerlight L_SP07ABCDE
+{
+    color 0.4 0.9 0.4
+    size 56
+    secondarySize 64
+    chance 0.5
+}
+
+flickerlight L_SP07FGHIJ
+{
+    color 0.4 0.9 0.4
+    size 64
+    secondarySize 72
+    chance 0.5
+}
+
+flickerlight L_SP07KLMNOP
+{
+    color 0.4 0.9 0.4
+    size 72
+    secondarySize 80
+    chance 0.5
+}
+
+flickerlight L_SP07QRST
+{
+    color 0.4 0.9 0.4
+    size 80
+    secondarySize 96
+    chance 0.5
+}
+
+flickerlight L_SP07U
+{
+    color 0.3 0.8 0.3
+    size 80
+    secondarySize 96
+    chance 0.5
+}
+
+flickerlight L_SP07V
+{
+    color 0.2 0.7 0.2
+    size 80
+    secondarySize 96
+    chance 0.5
+}
+
+flickerlight L_SP07W
+{
+    color 0.2 0.6 0.2
+    size 72
+    secondarySize 80
+    chance 0.5
+}
+
+frame SP07A { light L_SP07ABCDE }
+frame SP07B { light L_SP07ABCDE }
+frame SP07C { light L_SP07ABCDE }
+frame SP07D { light L_SP07ABCDE }
+frame SP07E { light L_SP07ABCDE }
+frame SP07F { light L_SP07FGHIJ }
+frame SP07G { light L_SP07FGHIJ }
+frame SP07H { light L_SP07FGHIJ }
+frame SP07I { light L_SP07FGHIJ }
+frame SP07J { light L_SP07FGHIJ }
+frame SP07K { light L_SP07KLMNOP }
+frame SP07L { light L_SP07KLMNOP }
+frame SP07M { light L_SP07KLMNOP }
+frame SP07N { light L_SP07KLMNOP }
+frame SP07O { light L_SP07KLMNOP }
+frame SP07P { light L_SP07KLMNOP }
+frame SP07Q { light L_SP07QRST }
+frame SP07R { light L_SP07QRST }
+frame SP07S { light L_SP07QRST }
+frame SP07T { light L_SP07QRST }
+frame SP07U { light L_SP07U }
+frame SP07V { light L_SP07V }
+
+//------------------------------
+pointlight L_BON1
+{
+    color 0.3 0.3 0.3
+    size 2
+}
+
+frame BON1A { light L_BON1 }
+
+//------------------------------
+// "Ichor Vial"
+pulselight CELL_LIGHT
+{
+    color 0.6 0.1 0.1 
+    size 32
+    secondarySize 40
+    interval 2.0
+}
+
+object "Energy Cell"
+{
+  frame CELL { light CELL_LIGHT }
+}
+
+// "Ichor Tank"
+pulselight CELP_LIGHT
+{
+    color 0.6 0.1 0.1 
+    size 40
+    secondarySize 48
+    interval 2.0
+}
+
+object "Energy Pack"
+{
+  frame CELP { light CELP_LIGHT }
+}
+
+pointlight CLIP_LIGHT
+{
+    color 0.7 0.7 0.1 
+    size 32
+}
+
+object "Ammo Clip"
+{
+  frame CLIP { light CLIP_LIGHT }
+}
+
