@@ -22,13 +22,13 @@ weapon Blunderbuss "Blunderbuss"
 			SHTG A 1 A_Raise
 			loop
 		fire:
-			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot3, -BLUNDERBUSS_SHOT_3_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot2, -BLUNDERBUSS_SHOT_2_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot1,  BLUNDERBUSS_SHOT_1_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot2,  BLUNDERBUSS_SHOT_2_ANGLE)
-			SHTF A 0 Bright A_WeaponProjectile(thing BlunderbussShot3,  BLUNDERBUSS_SHOT_3_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(BlunderbussShot3, -BLUNDERBUSS_SHOT_3_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(BlunderbussShot2, -BLUNDERBUSS_SHOT_2_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(BlunderbussShot1,  BLUNDERBUSS_SHOT_1_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(BlunderbussShot2,  BLUNDERBUSS_SHOT_2_ANGLE)
+			SHTF A 0 Bright A_WeaponProjectile(BlunderbussShot3,  BLUNDERBUSS_SHOT_3_ANGLE)
 			SHTF A 0 Bright A_ConsumeAmmo
-			SHTF A 0 Bright A_WeaponSound(sound DSBUSFIR)
+			SHTF A 0 Bright A_WeaponSound(DSBUSFIR)
 			SHTF A 1 Bright A_GunFlash
 			SHTF B 1 Bright Offset(1, 36)
 			SHTF C 1 Bright Offset(1, 40)
@@ -38,7 +38,7 @@ weapon Blunderbuss "Blunderbuss"
 			SHTG A 1 A_CheckReload
 			SHTG BC 2
 			SHTG D 3
-			SHTG F 2 A_WeaponSound(sound DSBUSCOK)
+			SHTG F 2 A_WeaponSound(DSBUSCOK)
 			SHTG G 2
 			SHTG H 6
 			SHTG G 2

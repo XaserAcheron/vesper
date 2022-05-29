@@ -9,7 +9,7 @@ thing VesperPlayer "Vesper"
 	states
 	{
 	painalt:
-		PLAY G 4 A_PlaySound(sound DSPLPAI2)
+		PLAY G 4 A_PlaySound(DSPLPAI2)
 		goto spawn
 	painchoice:
 		PLAY G 0 A_RandomJump(painalt, 128)

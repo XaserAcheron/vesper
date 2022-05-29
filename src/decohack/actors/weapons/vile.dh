@@ -18,7 +18,7 @@ weapon Vile "Vile Driver"
 			BFGG AAAAA 1 A_WeaponReady
 			BFGG A 0 A_CheckAmmo(ready)
 		willing:
-			BFGF A 0 A_WeaponSound(sound DSVIDACT)
+			BFGF A 0 A_WeaponSound(DSVIDACT)
 		able:
 			BFGF A 1 A_WeaponReady
 			loop
@@ -31,44 +31,44 @@ weapon Vile "Vile Driver"
 			BFGG A 1 A_Lower
 			loop
 		dryfire:
-			BFGG F 1 A_WeaponSound(sound DSVIDDRY)
+			BFGG F 1 A_WeaponSound(DSVIDDRY)
 			BFGG GHFGHFGH 1
 			BFGG H 1
 			BFGG H 0 A_RefireTo(dryfire, 1)
-			BFGG F 1 A_WeaponSound(sound DSVIDDWN)
+			BFGG F 1 A_WeaponSound(DSVIDDWN)
 			BFGG GHFGH 1
 			BFGG FGHFGHIJK 2
 			BFGG LM 3
 			goto ready
 		fire:
-			BFGF B 3 Offset(1, 32) A_WeaponSound(sound DSVIDUP)
+			BFGF B 3 Offset(1, 32) A_WeaponSound(DSVIDUP)
 			BFGF CDEFGHFGH 2
 			BFGF FGHFGHFGH 1
-			BFGF I 0 Bright A_WeaponSound(sound DSVIDSTR)
+			BFGF I 0 Bright A_WeaponSound(DSVIDSTR)
 		hold:
-			BFGF I 0 Bright A_WeaponProjectile(thing VileShot1, -3.078,-1.000, 0.0, -2.0)
-			BFGF I 0 Bright A_WeaponProjectile(thing VileShot2,  3.078,-1.000, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(VileShot1, -3.078,-1.000, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(VileShot2,  3.078,-1.000, 0.0, -2.0)
 			BFGF I 0 Bright A_ConsumeAmmo(2)
 			BFGF I 1 Bright Offset(1, 32) A_GunFlash()
 			BFGF J 1 Bright Offset(3, 34)
 			BFGF K 1 Bright Offset(2, 33)
-			BFGF I 0 Bright A_WeaponProjectile(thing VileShot1,  0.000,-3.236, 0.0, -2.0)
-			BFGF I 0 Bright A_WeaponProjectile(thing VileShot2,  2.618, 1.902, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(VileShot1,  0.000,-3.236, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(VileShot2,  2.618, 1.902, 0.0, -2.0)
 			BFGF I 0 Bright A_ConsumeAmmo(2)
 			BFGF I 1 Bright Offset( 1, 32) A_GunFlash()
 			BFGF J 1 Bright Offset(-1, 34)
 			BFGF K 1 Bright Offset(-1, 33)
-			BFGF I 0 Bright A_WeaponProjectile(thing VileShot1,  0.000,-3.236, 0.0, -2.0)
-			BFGF I 0 Bright A_WeaponProjectile(thing VileShot2, -2.618, 1.902, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(VileShot1,  0.000,-3.236, 0.0, -2.0)
+			BFGF I 0 Bright A_WeaponProjectile(VileShot2, -2.618, 1.902, 0.0, -2.0)
 			BFGF I 0 Bright A_ConsumeAmmo(2)
 			BFGF I 1 Bright Offset(1, 32) A_GunFlash()
 			BFGF J 1 Bright Offset(1, 34)
 			BFGF K 1 Bright Offset(1, 33)
-			BFGF K 0 Bright Offset(1, 32) A_WeaponSound(sound DSVIDSPN)
+			BFGF K 0 Bright Offset(1, 32) A_WeaponSound(DSVIDSPN)
 			BFGF K 0 Bright A_CheckAmmo(dryfire)
 			BFGF K 0 Bright A_RefireTo(hold, 1)
 		spindown:
-			BFGF F 1 A_WeaponSound(sound DSVIDDWN)
+			BFGF F 1 A_WeaponSound(DSVIDDWN)
 			BFGF GHFGH 1
 			BFGF FGHFGHLMN 2
 			BFGF OP 3
@@ -99,7 +99,7 @@ thing VileShot1 "Vile Bolt"
 	states
 	{
 		seek:
-			BILE A 0 Bright A_SpawnObject(thing VileTrail)
+			BILE A 0 Bright A_SpawnObject(VileTrail)
 			BILE A 1 Bright A_SeekTracer(VILE_SEEK_THRESHOLD, VILE_SEEK_ANGLE)
 			// in deathmatch, don't pick a new target if initial target dies
 			#ifdef EXT_DEATHMATCH
@@ -108,7 +108,7 @@ thing VileShot1 "Vile Bolt"
 		tryseek:
 			BILE A 0 Bright A_JumpIfTracerInSight(seek)
 		spawn:
-			BILE AAAAAAAA 1 Bright A_SpawnObject(thing VileTrail)
+			BILE AAAAAAAA 1 Bright A_SpawnObject(VileTrail)
 			BILE A 0 Bright A_FindTracer(VILE_SEEK_FOV)
 			goto tryseek
 		death:

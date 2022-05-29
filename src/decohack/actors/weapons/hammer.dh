@@ -24,17 +24,17 @@ weapon Hammer "Foe Hammer"
 			loop
 		fire:
 			SHT2 B 0 Bright A_WeaponBulletAttack(HAMMER_BULLET_HSPREAD, HAMMER_BULLET_VSPREAD, HAMMER_BULLET_COUNT, HAMMER_BULLET_DAMAGE)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     , -30.0, 0.0,-8.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis, -22.5, 0.0,-6.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     , -15.0, 0.0,-4.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis,  -7.5, 0.0,-2.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     ,   0.0, 0.0, 0.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis,   7.5, 0.0, 2.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     ,  15.0, 0.0, 4.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWaveInvis,  22.5, 0.0, 6.0, -4.0)
-			SHT2 B 0 Bright A_WeaponProjectile(thing HammerWave     ,  30.0, 0.0, 8.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWave     , -30.0, 0.0,-8.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWaveInvis, -22.5, 0.0,-6.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWave     , -15.0, 0.0,-4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWaveInvis,  -7.5, 0.0,-2.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWave     ,   0.0, 0.0, 0.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWaveInvis,   7.5, 0.0, 2.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWave     ,  15.0, 0.0, 4.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWaveInvis,  22.5, 0.0, 6.0, -4.0)
+			SHT2 B 0 Bright A_WeaponProjectile(HammerWave     ,  30.0, 0.0, 8.0, -4.0)
 			SHT2 B 0 Bright A_ConsumeAmmo
-			SHT2 B 0 Bright A_WeaponSound(sound DSHAMFIR)
+			SHT2 B 0 Bright A_WeaponSound(DSHAMFIR)
 			SHT2 B 1 Bright A_GunFlash
 			SHT2 CD 2 Bright
 			SHT2 E 4
@@ -43,10 +43,10 @@ weapon Hammer "Foe Hammer"
 			SHT2 IJ 2
 			SHT2 K 2
 			SHT2 K 2 Offset(-8, 40)
-			SHT2 L 2 A_WeaponSound(sound DSHAMIN)
+			SHT2 L 2 A_WeaponSound(DSHAMIN)
 			SHT2 L 2 Offset(-16, 48)
 			SHT2 L 4 Offset(-18, 52)
-			SHT2 L 2 Offset(-16, 48) A_WeaponSound(sound DSHAMOUT)
+			SHT2 L 2 Offset(-16, 48) A_WeaponSound(DSHAMOUT)
 			SHT2 K 2 Offset(-8, 40)
 			SHT2 J 2 Offset( -1, 32)
 			SHT2 IA 2
@@ -77,7 +77,7 @@ thing HammerWave "Hammer Wave"
 	states
 	{
 		spawn:
-			TNT1 AAAAAAAAAA 1 Bright A_SpawnObject(thing HammerWaveTrail)
+			TNT1 AAAAAAAAAA 1 Bright A_SpawnObject(HammerWaveTrail)
 			stop
 		death:
 			TNT1 A 1
