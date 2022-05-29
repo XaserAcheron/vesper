@@ -4,8 +4,8 @@ Primary purpose         : Everything! 'Tis a gameplay mod.
 ===========================================================================
 Title                   : Vesper
 Filename                : xa-vesper.wad
-Release date            : 2022-01-02
-Version                 : 1.0.0
+Release date            : 2022-05-29
+Version                 : 1.1.0 Beta 1 (Odamex Party Edition)
 Project Homepage        : https://hellforgestudios.com/doomforge/vesper/
 Git Repo                : https://github.com/XaserAcheron/vesper
 Discussion Thread       : https://www.doomworld.com/forum/topic/123800
@@ -105,6 +105,21 @@ not work at the time of writing (though a support patch for these in the
 future isn't out of the question ;).
 
 When in doubt, give it a try! You may be surprised what works.
+
+===========================================================================
+* Changelog *
+
+v1.1.0
+- WORK IN PROGRESS -- this is a beta build!
+- Deathmatch Extension added, which makes a few balance tweaks for DM play:
+  - Buff Blunderbuss projectile speed for more consistent damage
+  - Reduce Nox gas cloud radius
+  - Reduce Ichor damage and projectile speed a bit
+  - Ichor projectiles no longer re-acquire a target after losing the first
+- All weapon behavior is the same for the primary (singleplayer) wad.
+
+v1.0.0
+- Initial release.
 
 ===========================================================================
 * Credits *
