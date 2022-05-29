@@ -111,12 +111,13 @@ When in doubt, give it a try! You may be surprised what works.
 
 v1.1.0
 - WORK IN PROGRESS -- this is a beta build!
+- New Statusbar
 - Deathmatch Extension added, which makes a few balance tweaks for DM play:
   - Buff Blunderbuss projectile speed for more consistent damage
   - Reduce Nox gas cloud radius
   - Reduce Ichor damage and projectile speed a bit
   - Ichor projectiles no longer re-acquire a target after losing the first
-- All weapon behavior is the same for the primary (singleplayer) wad.
+  - All weapon behavior is the same for the primary (singleplayer) wad.
 
 v1.0.0
 - Initial release.
