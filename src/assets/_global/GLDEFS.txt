@@ -376,3 +376,23 @@ object Deh_Actor_168 // VileShot2
 	frame SP05K { light XA_VILE_IMPACT_4 }
 	frame SP05L { light XA_VILE_IMPACT_5 }
 }
+
+// ==============
+// items n' stuff
+// ==============
+
+pulselight XA_PILLS_HERE
+{
+	color 0.3 0.0 0.0
+	size 16
+	secondarySize 20
+	interval 2.0
+	attenuate 1
+	dontlightself 1
+	offset 0 10 0
+}
+
+object HealthBonus
+{
+	frame BON1A { light XA_PILLS_HERE }
+}
