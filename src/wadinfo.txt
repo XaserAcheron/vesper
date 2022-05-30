@@ -77,12 +77,15 @@ May Not Run With...     : Non-MBF21-supporting ports. This project has been
 
 Vesper uses MBF21 features, and requires a port that supports the standard.
 
-Known working ports as of this version's release include:
+Officially Supported ports:
 - DSDA-Doom (recommended for Singleplayer) -- 0.22.5 or later
 - Odamex (recommended for Multiplayer) -- 10.1.0 or later
 - Woof -- 8.1.0 or later
-- GZDoom -- devbuilds only, not yet supported in latest official release
 - DelphiDoom -- 2022-05-01 update or later
+
+Nearly-Supported ports:
+- Eternity -- devbuilds only, not yet supported in latest official release
+- GZDoom -- ditto
 
 Other ports and versions may work if they've received updates since the
 time of writing, so feel free to try it out on your favorite port, but
