@@ -1,377 +1,370 @@
-// DelphiDoom light definitions for XA-VESPER
-// Version WIP_20220125 or higher
+/*****************************************************************************
+ * vesper - delphidoom lightdef
+ * (c) xaser acheron 2022
+ *     MIT License
+ ****************************************************************************/
 
-//------------------------------
-pointlight L_SP00A
+// NOTE: this would ideally be identical to GLDEFS, but DelphiDoom
+// interprets the "size" parameter differently than GZDoom and the
+// colors are a bit different, so adjustments have been made.
+
+// ==============
+// blunderbuss
+// ==============
+
+pointlight XA_BLUNDERBUSS_SHOT_1
 {
-    color 0.7 0.7 0.0
-    size 24
+	color 0.0 0.50 0.89
+	size 56
 }
 
-flickerlight L_SP00BCD
+pointlight XA_BLUNDERBUSS_SHOT_2
 {
-    color 0.7 0.7 0.0
-    size 32
-    secondarySize 40
-    chance 0.3
+	color 0.0 0.55 0.98
+	size 60
 }
 
-frame SP00A { light L_SP00A }
-frame SP00B { light L_SP00BCD }
-frame SP00C { light L_SP00BCD }
-frame SP00D { light L_SP00BCD }
-
-//------------------------------
-pointlight L_SP01A
+pointlight XA_BLUNDERBUSS_IMPACT_1
 {
-    color 0.4 0.7 0.3
-    size 72
+	color 0.0 0.5 0.89
+	size 48
 }
 
-flickerlight L_SP01BCDEFGHI
+pointlight XA_BLUNDERBUSS_IMPACT_2
 {
-    color 0.4 0.7 0.3
-    size 80
-    secondarySize 96
-    chance 0.5
+	color 0.0 0.5 0.89
+	size 56
 }
 
-frame SP01A { light L_SP01A }
-frame SP01B { light L_SP01BCDEFGHI }
-frame SP01C { light L_SP01BCDEFGHI }
-frame SP01D { light L_SP01BCDEFGHI }
-frame SP01E { light L_SP01BCDEFGHI }
-frame SP01F { light L_SP01BCDEFGHI }
-frame SP01G { light L_SP01BCDEFGHI }
-frame SP01H { light L_SP01BCDEFGHI }
-frame SP01I { light L_SP01BCDEFGHI }
-
-//------------------------------
-pointlight L_SP02
+pointlight XA_BLUNDERBUSS_IMPACT_3
 {
-    color 0.0 0.0 0.8
-    size 40
+	color 0.0 0.33 0.59
+	size 64
 }
 
-frame SP02A { light L_SP02 }
-frame SP02B { light L_SP02 }
-frame SP02C { light L_SP02 }
-frame SP02D { light L_SP02 }
-
-//------------------------------
-pointlight L_SP03A
+pointlight XA_BLUNDERBUSS_IMPACT_4
 {
-    color 0.3 0.03 0.9
-    size 32
+	color 0.0 0.2 0.39
+	size 72
 }
 
-flickerlight L_SP03B
+// BlunderBussShot# common stuff:
+frame SP02A { light XA_BLUNDERBUSS_SHOT_1 }
+frame SP02B { light XA_BLUNDERBUSS_SHOT_2 }
+frame SP02C { light XA_BLUNDERBUSS_SHOT_1 }
+frame SP02D { light XA_BLUNDERBUSS_SHOT_2 }
+
+object Deh_Actor_150 // BlunderbussShot1
 {
-    color 0.3 0.3 0.9
-    size 40
-    secondarySize 48
-    chance 0.5
+	frame SP03A { light XA_BLUNDERBUSS_IMPACT_1 }
+	frame SP03B { light XA_BLUNDERBUSS_IMPACT_2 }
+	frame SP03C { light XA_BLUNDERBUSS_IMPACT_3 }
+	frame SP03D { light XA_BLUNDERBUSS_IMPACT_4 }
 }
 
-flickerlight L_SP03C
+object Deh_Actor_151 // BlunderbussShot2
 {
-    color 0.3 0.3 1.0
-    size 48
-    secondarySize 56
-    chance 0.5
+	frame SP03A { light XA_BLUNDERBUSS_IMPACT_1 }
+	frame SP03B { light XA_BLUNDERBUSS_IMPACT_2 }
+	frame SP03C { light XA_BLUNDERBUSS_IMPACT_3 }
+	frame SP03D { light XA_BLUNDERBUSS_IMPACT_4 }
 }
 
-flickerlight L_SP03D
+object Deh_Actor_152 // BlunderbussShot3
 {
-    color 0.3 0.3 1.0
-    size 56
-    secondarySize 64
-    chance 0.5
+	frame SP03A { light XA_BLUNDERBUSS_IMPACT_1 }
+	frame SP03B { light XA_BLUNDERBUSS_IMPACT_2 }
+	frame SP03C { light XA_BLUNDERBUSS_IMPACT_3 }
+	frame SP03D { light XA_BLUNDERBUSS_IMPACT_4 }
 }
 
-flickerlight L_SP03E
+// ==============
+// foe hammer
+// ==============
+
+pointlight XA_HAMMER_SHOT
 {
-    color 0.0 0.0 0.8
-    size 56
-    secondarySize 64
-    chance 0.5
+	color 0.56 0.82 1.0
+	size 64
 }
 
-flickerlight L_SP03F
+object Deh_Actor_153 // HammerWave
 {
-    color 0.0 0.0 0.6
-    size 56
-    secondarySize 64
-    chance 0.5
+	frame TNT1 { light XA_HAMMER_SHOT }
 }
 
-frame SP03A { light L_SP03A }
-frame SP03B { light L_SP03B }
-frame SP03C { light L_SP03C }
-frame SP03D { light L_SP03D }
-frame SP03E { light L_SP03E }
-frame SP03F { light L_SP03F }
+// ==============
+// heavy spiker
+// ==============
 
-//------------------------------
-pointlight L_SP04AB
+flickerlight XA_SPIKE_SHOT
 {
-    color 0.8 0.0 0.0
-    size 32
+	color 0.5 0.4 0.1
+	size 32
+	secondarySize 18
+	chance 0.5
 }
 
-pointlight L_SP04CDEFG
+// SpikeShotLeft & SpikeShotRight
+frame SP00A { light XA_SPIKE_SHOT }
+
+// ==============
+// nox launcher
+// ==============
+
+pointlight XA_NOX_GRENADE
 {
-    color 0.7 0.0 0.0
-    size 24
+	color 0.35 0.55 0.18
+	size 64
+	dontlightself 1
 }
 
-flickerlight L_SP04HIJK
+pointlight XA_NOX_EXPLODE_1
 {
-    color 0.8 0.0 0.0
-    size 40
-    secondarySize 48
-    chance 0.3
+	color 0.66 0.82 0.36
+	size 128
+	dontlightself 1
 }
 
-flickerlight L_SP04L
+pointlight XA_NOX_EXPLODE_2
 {
-    color 0.7 0.0 0.0
-    size 40
-    secondarySize 48
-    chance 0.3
+	color 0.48 0.7 0.22
+	size 64
+	dontlightself 1
 }
 
-flickerlight L_SP04M
+pointlight XA_NOX_EXPLODE_3
 {
-    color 0.6 0.0 0.0
-    size 40
-    secondarySize 48
-    chance 0.3
+	color 0.35 0.55 0.18
+	size 80
+	dontlightself 1
 }
 
-frame SP04A { light L_SP04AB }
-//frame SP04B { light L_SP04AB }
-frame SP04C { light L_SP04CDEFG }
-frame SP04D { light L_SP04CDEFG }
-frame SP04E { light L_SP04CDEFG }
-frame SP04F { light L_SP04CDEFG }
-frame SP04G { light L_SP04CDEFG }
-frame SP04H { light L_SP04HIJK }
-frame SP04I { light L_SP04HIJK }
-frame SP04J { light L_SP04HIJK }
-frame SP04K { light L_SP04HIJK }
-frame SP04L { light L_SP04L }
-frame SP04M { light L_SP04M }
-
-//------------------------------
-pointlight L_SP05AB
+pointlight XA_NOX_EXPLODE_4
 {
-    color 0.3 0.9 0.2
-    size 32
+	color 0.25 0.56 0.18
+	size 96
+	dontlightself 1
 }
 
-pointlight L_SP05CDEFG
+pointlight XA_NOX_EXPLODE_5
 {
-    color 0.3 0.8 0.2
-    size 24
+	color 0.17 0.35 0.16
+	size 112
+	dontlightself 1
 }
 
-flickerlight L_SP05HIJKLM
+pointlight XA_NOX_EXPLODE_6
 {
-    color 0.3 0.9 0.2
-    size 40
-    secondarySize 48
-    chance 0.5
+	color 0.1 0.19 0.12
+	size 128
+	dontlightself 1
 }
 
-frame SP05A { light L_SP05AB }
-//frame SP05B { light L_SP05AB }
-frame SP05C { light L_SP05CDEFG }
-frame SP05D { light L_SP05CDEFG }
-frame SP05E { light L_SP05CDEFG }
-frame SP05F { light L_SP05CDEFG }
-frame SP05G { light L_SP05CDEFG }
-frame SP05H { light L_SP05HIJKLM }
-frame SP05I { light L_SP05HIJKLM }
-frame SP05J { light L_SP05HIJKLM }
-frame SP05K { light L_SP05HIJKLM }
-frame SP05L { light L_SP05HIJKLM }
-frame SP05M { light L_SP05HIJKLM }
-
-//------------------------------
-flickerlight L_SP06A
+flickerlight XA_NOX_GAS_CLOUD_1
 {
-    color 0.4 0.9 0.4
-    size 64
-    secondarySize 72
-    chance 0.5
+	color 0.15 0.19 0.06
+	size 128
+	secondarysize 80
+	chance 0.5
+	dontlightself 1
 }
 
-flickerlight L_SP06B
+flickerlight XA_NOX_GAS_CLOUD_2
 {
-    color 0.4 0.9 0.4
-    size 72
-    secondarySize 80
-    chance 0.5
+	color 0.15 0.19 0.06
+	size 112
+	secondarysize 72
+	chance 0.5
+	dontlightself 1
 }
 
-flickerlight L_SP06C
+flickerlight XA_NOX_GAS_CLOUD_3
 {
-    color 0.4 1.0 0.4
-    size 80
-    secondarySize 96
-    chance 0.5
+	color 0.15 0.19 0.06
+	size 96
+	secondarysize 64
+	chance 0.5
+	dontlightself 1
 }
 
-
-flickerlight L_SP06D
+flickerlight XA_NOX_GAS_CLOUD_4
 {
-    color 0.3 0.8 0.3
-    size 80
-    secondarySize 96
-    chance 0.5
+	color 0.15 0.19 0.06
+	size 80
+	secondarysize 56
+	chance 0.5
+	dontlightself 1
 }
 
-flickerlight L_SP06E
+flickerlight XA_NOX_GAS_CLOUD_5
 {
-    color 0.2 0.7 0.2
-    size 80
-    secondarySize 96
-    chance 0.5
+	color 0.15 0.19 0.06
+	size 64
+	secondarysize 48
+	chance 0.5
+	dontlightself 1
 }
 
-frame SP06A { light L_SP06A }
-frame SP06B { light L_SP06B }
-frame SP06C { light L_SP06C }
-frame SP06D { light L_SP06D }
-frame SP06E { light L_SP06E }
-
-//------------------------------
-flickerlight L_SP07ABCDE
+flickerlight XA_NOX_GAS_CLOUD_6
 {
-    color 0.4 0.9 0.4
-    size 56
-    secondarySize 64
-    chance 0.5
+	color 0.15 0.19 0.06
+	size 48
+	secondarysize 40
+	chance 0.5
+	dontlightself 1
 }
 
-flickerlight L_SP07FGHIJ
+// NoxGrenade
+frame SP01A { light XA_NOX_GRENADE_3 }
+frame SP01H { light XA_NOX_EXPLODE_1 }
+frame SP01B { light XA_NOX_EXPLODE_2 }
+frame SP01C { light XA_NOX_EXPLODE_3 }
+frame SP01D { light XA_NOX_EXPLODE_4 }
+frame SP01E { light XA_NOX_EXPLODE_5 }
+frame SP01F { light XA_NOX_EXPLODE_6 }
+
+// NoxGasCloud
+frame SP07A { light XA_NOX_GAS_CLOUD_1 }
+frame SP07B { light XA_NOX_GAS_CLOUD_1 }
+frame SP07C { light XA_NOX_GAS_CLOUD_1 }
+frame SP07D { light XA_NOX_GAS_CLOUD_1 }
+frame SP07E { light XA_NOX_GAS_CLOUD_1 }
+frame SP07F { light XA_NOX_GAS_CLOUD_1 }
+frame SP07G { light XA_NOX_GAS_CLOUD_1 }
+frame SP07H { light XA_NOX_GAS_CLOUD_1 }
+frame SP07I { light XA_NOX_GAS_CLOUD_1 }
+frame SP07J { light XA_NOX_GAS_CLOUD_1 }
+frame SP07K { light XA_NOX_GAS_CLOUD_1 }
+frame SP07L { light XA_NOX_GAS_CLOUD_1 }
+frame SP07M { light XA_NOX_GAS_CLOUD_1 }
+frame SP07N { light XA_NOX_GAS_CLOUD_2 }
+frame SP07O { light XA_NOX_GAS_CLOUD_2 }
+frame SP07P { light XA_NOX_GAS_CLOUD_3 }
+frame SP07Q { light XA_NOX_GAS_CLOUD_3 }
+frame SP07R { light XA_NOX_GAS_CLOUD_4 }
+frame SP07S { light XA_NOX_GAS_CLOUD_4 }
+frame SP07T { light XA_NOX_GAS_CLOUD_5 }
+frame SP07U { light XA_NOX_GAS_CLOUD_5 }
+frame SP07V { light XA_NOX_GAS_CLOUD_6 }
+frame SP07W { light XA_NOX_GAS_CLOUD_6 }
+
+// ==============
+// ichor rifle
+// ==============
+
+pointlight XA_ICHOR_SHOT
 {
-    color 0.4 0.9 0.4
-    size 64
-    secondarySize 72
-    chance 0.5
+	color 1.0 0.0 0.0
+	size 36
 }
 
-flickerlight L_SP07KLMNOP
+pointlight XA_ICHOR_IMPACT_1
 {
-    color 0.4 0.9 0.4
-    size 72
-    secondarySize 80
-    chance 0.5
+	color 1.0 0.0 0.0
+	size 32
 }
 
-flickerlight L_SP07QRST
+pointlight XA_ICHOR_IMPACT_2
 {
-    color 0.4 0.9 0.4
-    size 80
-    secondarySize 96
-    chance 0.5
+	color 0.66 0.0 0.0
+	size 36
 }
 
-flickerlight L_SP07U
+pointlight XA_ICHOR_IMPACT_3
 {
-    color 0.3 0.8 0.3
-    size 80
-    secondarySize 96
-    chance 0.5
+	color 0.5 0.0 0.0
+	size 40
 }
 
-flickerlight L_SP07V
+pointlight XA_ICHOR_IMPACT_4
 {
-    color 0.2 0.7 0.2
-    size 80
-    secondarySize 96
-    chance 0.5
+	color 0.3 0.0 0.0
+	size 44
 }
 
-flickerlight L_SP07W
+pointlight XA_ICHOR_IMPACT_5
 {
-    color 0.2 0.6 0.2
-    size 72
-    secondarySize 80
-    chance 0.5
+	color 0.2 0.0 0.0
+	size 48
 }
 
-frame SP07A { light L_SP07ABCDE }
-frame SP07B { light L_SP07ABCDE }
-frame SP07C { light L_SP07ABCDE }
-frame SP07D { light L_SP07ABCDE }
-frame SP07E { light L_SP07ABCDE }
-frame SP07F { light L_SP07FGHIJ }
-frame SP07G { light L_SP07FGHIJ }
-frame SP07H { light L_SP07FGHIJ }
-frame SP07I { light L_SP07FGHIJ }
-frame SP07J { light L_SP07FGHIJ }
-frame SP07K { light L_SP07KLMNOP }
-frame SP07L { light L_SP07KLMNOP }
-frame SP07M { light L_SP07KLMNOP }
-frame SP07N { light L_SP07KLMNOP }
-frame SP07O { light L_SP07KLMNOP }
-frame SP07P { light L_SP07KLMNOP }
-frame SP07Q { light L_SP07QRST }
-frame SP07R { light L_SP07QRST }
-frame SP07S { light L_SP07QRST }
-frame SP07T { light L_SP07QRST }
-frame SP07U { light L_SP07U }
-frame SP07V { light L_SP07V }
+// IchorShot
+frame SP04A { light XA_ICHOR_SHOT }
+frame SP04H { light XA_ICHOR_IMPACT_1 }
+frame SP04I { light XA_ICHOR_IMPACT_2 }
+frame SP04J { light XA_ICHOR_IMPACT_3 }
+frame SP04K { light XA_ICHOR_IMPACT_4 }
+frame SP04L { light XA_ICHOR_IMPACT_5 }
 
-//------------------------------
-pointlight L_BON1
+// ==============
+// vile driver
+// ==============
+
+pointlight XA_VILE_SHOT
 {
-    color 0.3 0.3 0.3
-    size 2
+	color 0.48 0.7 0.22
+	size 36
+	dontlightself 1
 }
 
-frame BON1A { light L_BON1 }
-
-//------------------------------
-// "Ichor Vial"
-pulselight CELL_LIGHT
+pointlight XA_VILE_IMPACT_1
 {
-    color 0.6 0.1 0.1 
-    size 32
-    secondarySize 40
-    interval 2.0
+	color 0.66 0.82 0.36
+	size 32
+	dontlightself 1
 }
 
-object "Energy Cell"
+pointlight XA_VILE_IMPACT_2
 {
-  frame CELL { light CELL_LIGHT }
+	color 0.48 0.7 0.22
+	size 36
+	dontlightself 1
 }
 
-// "Ichor Tank"
-pulselight CELP_LIGHT
+pointlight XA_VILE_IMPACT_3
 {
-    color 0.6 0.1 0.1 
-    size 40
-    secondarySize 48
-    interval 2.0
+	color 0.35 0.55 0.18
+	size 40
+	dontlightself 1
 }
 
-object "Energy Pack"
+pointlight XA_VILE_IMPACT_4
 {
-  frame CELP { light CELP_LIGHT }
+	color 0.25 0.56 0.18
+	size 44
+	dontlightself 1
 }
 
-pointlight CLIP_LIGHT
+pointlight XA_VILE_IMPACT_5
 {
-    color 0.7 0.7 0.1 
-    size 32
+	color 0.17 0.35 0.16
+	size 48
+	dontlightself 1
 }
 
-object "Ammo Clip"
+// VileShot1 & VileShot2
+frame SP05A { light XA_VILE_SHOT }
+frame SP05H { light XA_VILE_IMPACT_1 }
+frame SP05I { light XA_VILE_IMPACT_2 }
+frame SP05J { light XA_VILE_IMPACT_3 }
+frame SP05K { light XA_VILE_IMPACT_4 }
+frame SP05L { light XA_VILE_IMPACT_5 }
+
+// ==============
+// items n' stuff
+// ==============
+
+pulselight XA_PILLS_HERE
 {
-  frame CLIP { light CLIP_LIGHT }
+	color 0.3 0.0 0.0
+	size 16
+	secondarySize 20
+	interval 2.0
+	attenuate 1
+	dontlightself 1
+	offset 0 10 0
 }
 
+// HealthBonus
+frame BON1A { light XA_PILLS_HERE }
