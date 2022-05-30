@@ -1,0 +1,378 @@
+/*****************************************************************************
+ * vesper - gzdoom gldefs
+ * (c) xaser acheron 2022
+ *     MIT License
+ ****************************************************************************/
+
+// TODO:
+// either de-hardcode these Deh_Actor_### names, or switch away from
+// "auto thing" in decohack -- right now this is a rather brittle
+// setup. also sucks having to write SP## all the time too. :P
+
+// ==============
+// blunderbuss
+// ==============
+
+pointlight XA_BLUNDERBUSS_SHOT_1
+{
+	color 0.0 0.25 0.89
+	size 28
+}
+
+pointlight XA_BLUNDERBUSS_SHOT_2
+{
+	color 0.0 0.275 0.98
+	size 30
+}
+
+pointlight XA_BLUNDERBUSS_IMPACT_1
+{
+	color 0.0 0.25 0.89
+	size 24
+}
+
+pointlight XA_BLUNDERBUSS_IMPACT_2
+{
+	color 0.0 0.25 0.89
+	size 28
+}
+
+pointlight XA_BLUNDERBUSS_IMPACT_3
+{
+	color 0.0 0.165 0.59
+	size 32
+}
+
+pointlight XA_BLUNDERBUSS_IMPACT_4
+{
+	color 0.0 0.1 0.39
+	size 36
+}
+
+object Deh_Actor_150 // BlunderbussShot1
+{
+	frame SP02A { light XA_BLUNDERBUSS_SHOT_1 }
+	frame SP02B { light XA_BLUNDERBUSS_SHOT_2 }
+	frame SP03A { light XA_BLUNDERBUSS_IMPACT_1 }
+	frame SP03B { light XA_BLUNDERBUSS_IMPACT_2 }
+	frame SP03C { light XA_BLUNDERBUSS_IMPACT_3 }
+	frame SP03D { light XA_BLUNDERBUSS_IMPACT_4 }
+}
+
+object Deh_Actor_151 // BlunderbussShot2
+{
+	frame SP02C { light XA_BLUNDERBUSS_SHOT_1 }
+	frame SP02D { light XA_BLUNDERBUSS_SHOT_2 }
+	frame SP03A { light XA_BLUNDERBUSS_IMPACT_1 }
+	frame SP03B { light XA_BLUNDERBUSS_IMPACT_2 }
+	frame SP03C { light XA_BLUNDERBUSS_IMPACT_3 }
+	frame SP03D { light XA_BLUNDERBUSS_IMPACT_4 }
+}
+
+object Deh_Actor_152 // BlunderbussShot3
+{
+	frame SP02C { light XA_BLUNDERBUSS_SHOT_1 }
+	frame SP02D { light XA_BLUNDERBUSS_SHOT_2 }
+	frame SP03A { light XA_BLUNDERBUSS_IMPACT_1 }
+	frame SP03B { light XA_BLUNDERBUSS_IMPACT_2 }
+	frame SP03C { light XA_BLUNDERBUSS_IMPACT_3 }
+	frame SP03D { light XA_BLUNDERBUSS_IMPACT_4 }
+}
+
+// ==============
+// foe hammer
+// ==============
+
+pointlight XA_HAMMER_SHOT
+{
+	color 0.56 0.82 1.0
+	size 32
+}
+
+object Deh_Actor_153 // HammerWave
+{
+	frame TNT1 { light XA_HAMMER_SHOT }
+}
+
+// ==============
+// heavy spiker
+// ==============
+
+flickerlight XA_SPIKE_SHOT
+{
+	color 0.5 0.4 0.1
+	size 16
+	secondarySize 18
+	chance 0.5
+}
+
+object Deh_Actor_156 // SpikeShotLeft
+{
+	frame SP00A { light XA_SPIKE_SHOT }
+}
+
+object Deh_Actor_157 // SpikeShotRight
+{
+	frame SP00A { light XA_SPIKE_SHOT }
+}
+
+// ==============
+// nox launcher
+// ==============
+
+pointlight XA_NOX_GRENADE
+{
+	color 0.35 0.55 0.18
+	size 32
+	dontlightself 1
+}
+
+pointlight XA_NOX_EXPLODE_1
+{
+	color 0.66 0.82 0.36
+	size 64
+	dontlightself 1
+}
+
+pointlight XA_NOX_EXPLODE_2
+{
+	color 0.48 0.7 0.22
+	size 32
+	dontlightself 1
+}
+
+pointlight XA_NOX_EXPLODE_3
+{
+	color 0.35 0.55 0.18
+	size 40
+	dontlightself 1
+}
+
+pointlight XA_NOX_EXPLODE_4
+{
+	color 0.25 0.56 0.18
+	size 48
+	dontlightself 1
+}
+
+pointlight XA_NOX_EXPLODE_5
+{
+	color 0.17 0.35 0.16
+	size 56
+	dontlightself 1
+}
+
+pointlight XA_NOX_EXPLODE_6
+{
+	color 0.1 0.19 0.12
+	size 64
+	dontlightself 1
+}
+
+flickerlight XA_NOX_GAS_CLOUD_1
+{
+	color 0.15 0.19 0.06
+	size 64
+	secondarysize 80
+	chance 0.5
+	dontlightself 1
+}
+
+flickerlight XA_NOX_GAS_CLOUD_2
+{
+	color 0.15 0.19 0.06
+	size 56
+	secondarysize 72
+	chance 0.5
+	dontlightself 1
+}
+
+flickerlight XA_NOX_GAS_CLOUD_3
+{
+	color 0.15 0.19 0.06
+	size 48
+	secondarysize 64
+	chance 0.5
+	dontlightself 1
+}
+
+flickerlight XA_NOX_GAS_CLOUD_4
+{
+	color 0.15 0.19 0.06
+	size 40
+	secondarysize 56
+	chance 0.5
+	dontlightself 1
+}
+
+flickerlight XA_NOX_GAS_CLOUD_5
+{
+	color 0.15 0.19 0.06
+	size 32
+	secondarysize 48
+	chance 0.5
+	dontlightself 1
+}
+
+flickerlight XA_NOX_GAS_CLOUD_6
+{
+	color 0.15 0.19 0.06
+	size 24
+	secondarysize 40
+	chance 0.5
+	dontlightself 1
+}
+
+object Deh_Actor_159 // NoxGrenade
+{
+	frame SP01A { light XA_NOX_GRENADE_3 }
+	frame SP01H { light XA_NOX_EXPLODE_1 }
+	frame SP01B { light XA_NOX_EXPLODE_2 }
+	frame SP01C { light XA_NOX_EXPLODE_3 }
+	frame SP01D { light XA_NOX_EXPLODE_4 }
+	frame SP01E { light XA_NOX_EXPLODE_5 }
+	frame SP01F { light XA_NOX_EXPLODE_6 }
+}
+
+object Deh_Actor_164 // NoxGasCloud
+{
+	frame SP07A { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07B { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07C { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07D { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07E { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07F { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07G { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07H { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07I { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07J { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07K { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07L { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07M { light XA_NOX_GAS_CLOUD_1 }
+	frame SP07N { light XA_NOX_GAS_CLOUD_2 }
+	frame SP07O { light XA_NOX_GAS_CLOUD_2 }
+	frame SP07P { light XA_NOX_GAS_CLOUD_3 }
+	frame SP07Q { light XA_NOX_GAS_CLOUD_3 }
+	frame SP07R { light XA_NOX_GAS_CLOUD_4 }
+	frame SP07S { light XA_NOX_GAS_CLOUD_4 }
+	frame SP07T { light XA_NOX_GAS_CLOUD_5 }
+	frame SP07U { light XA_NOX_GAS_CLOUD_5 }
+	frame SP07V { light XA_NOX_GAS_CLOUD_6 }
+	frame SP07W { light XA_NOX_GAS_CLOUD_6 }
+}
+
+// ==============
+// ichor rifle
+// ==============
+
+pointlight XA_ICHOR_SHOT
+{
+	color 0.66 0.0 0.0
+	size 18
+}
+
+pointlight XA_ICHOR_IMPACT_1
+{
+	color 0.5 0.0 0.0
+	size 16
+}
+
+pointlight XA_ICHOR_IMPACT_2
+{
+	color 0.33 0.0 0.0
+	size 18
+}
+
+pointlight XA_ICHOR_IMPACT_3
+{
+	color 0.25 0.0 0.0
+	size 20
+}
+
+pointlight XA_ICHOR_IMPACT_4
+{
+	color 0.15 0.0 0.0
+	size 22
+}
+
+pointlight XA_ICHOR_IMPACT_5
+{
+	color 0.1 0.0 0.0
+	size 24
+}
+
+object Deh_Actor_165 // IchorShot
+{
+	frame SP04A { light XA_ICHOR_SHOT }
+	frame SP04H { light XA_ICHOR_IMPACT_1 }
+	frame SP04I { light XA_ICHOR_IMPACT_2 }
+	frame SP04J { light XA_ICHOR_IMPACT_3 }
+	frame SP04K { light XA_ICHOR_IMPACT_4 }
+	frame SP04L { light XA_ICHOR_IMPACT_5 }
+}
+
+// ==============
+// vile driver
+// ==============
+
+pointlight XA_VILE_SHOT
+{
+	color 0.48 0.7 0.22
+	size 18
+	dontlightself 1
+}
+
+pointlight XA_VILE_IMPACT_1
+{
+	color 0.66 0.82 0.36
+	size 16
+	dontlightself 1
+}
+
+pointlight XA_VILE_IMPACT_2
+{
+	color 0.48 0.7 0.22
+	size 18
+	dontlightself 1
+}
+
+pointlight XA_VILE_IMPACT_3
+{
+	color 0.35 0.55 0.18
+	size 20
+	dontlightself 1
+}
+
+pointlight XA_VILE_IMPACT_4
+{
+	color 0.25 0.56 0.18
+	size 22
+	dontlightself 1
+}
+
+pointlight XA_VILE_IMPACT_5
+{
+	color 0.17 0.35 0.16
+	size 24
+	dontlightself 1
+}
+
+object Deh_Actor_167 // VileShot1
+{
+	frame SP05A { light XA_VILE_SHOT }
+	frame SP05H { light XA_VILE_IMPACT_1 }
+	frame SP05I { light XA_VILE_IMPACT_2 }
+	frame SP05J { light XA_VILE_IMPACT_3 }
+	frame SP05K { light XA_VILE_IMPACT_4 }
+	frame SP05L { light XA_VILE_IMPACT_5 }
+}
+
+object Deh_Actor_168 // VileShot2
+{
+	frame SP05A { light XA_VILE_SHOT }
+	frame SP05H { light XA_VILE_IMPACT_1 }
+	frame SP05I { light XA_VILE_IMPACT_2 }
+	frame SP05J { light XA_VILE_IMPACT_3 }
+	frame SP05K { light XA_VILE_IMPACT_4 }
+	frame SP05L { light XA_VILE_IMPACT_5 }
+}
