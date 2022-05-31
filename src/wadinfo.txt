@@ -4,8 +4,8 @@ Primary purpose         : Everything! 'Tis a gameplay mod.
 ===========================================================================
 Title                   : Vesper
 Filename                : xa-vesper.wad
-Release date            : 2022-05-29
-Version                 : 1.1.0 Beta 1 (Odamex Party Edition)
+Release date            : 2022-05-31
+Version                 : 1.1.0
 Project Homepage        : https://hellforgestudios.com/doomforge/vesper/
 Git Repo                : https://github.com/XaserAcheron/vesper
 Discussion Thread       : https://www.doomworld.com/forum/topic/123800
@@ -113,7 +113,6 @@ When in doubt, give it a try! You may be surprised what works.
 * Changelog *
 
 v1.1.0
-- WORK IN PROGRESS -- this is a beta build!
 - New Statusbar
 - Tweaked pain flash palette to be less blinding
 - Added dynamic light definitions for GZDoom and DelphiDoom
@@ -140,6 +139,16 @@ rd
 
 Bridgeburner
 - Doomforge hostin'
+
+Ralphis
+- Odamex dev & support
+- Multiplayer hype man
+
+Altazimuth
+- Eternity dev & support
+
+printz
+- Eternity dev & support
 
 TypicalSF (a.k.a. sonik.o.fan)
 - vintage eagle
@@ -195,6 +204,9 @@ Amuscaria
 
 Blox
 - ichor rifle (base parts)
+
+jval
+- DelphiDoom lightdefs (base)
 
 Raven Software (Heretic)
 - blunderbuss projectile
