@@ -6,8 +6,14 @@
 
 ammo AM_CLIP "Spikes"
 {
-	max 120
-	pickup 6
+	// TODO: split this off elsewhere; this is uggy
+	#ifdef EXT_DEATHMATCH
+		max 160
+		pickup 8
+	#else
+		max 120
+		pickup 6
+	#endif
 }
 
 ammo AM_SHELL "Ion Cartridges"
