@@ -28,3 +28,4 @@
 #include "actors/items/ammo.dh"
 #include "actors/items/health.dh"
 #include "actors/items/powerups.dh"
+#include "actors/items/weapons.dh"

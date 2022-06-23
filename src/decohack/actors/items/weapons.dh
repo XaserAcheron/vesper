@@ -1,0 +1,53 @@
+/*****************************************************************************
+ * vesper - decohack - WEPON PIKUP
+ * (c) xaser acheron 2022
+ *     MIT License
+ ****************************************************************************/
+
+// fullbright weapon pickups in DM
+
+#ifdef EXT_DEATHMATCH
+
+state S_CSAW
+{
+	CSAW A -1 Bright
+	Stop
+}
+
+state S_SHOT
+{
+	SHOT A -1 Bright
+	Stop
+}
+
+state S_SHOT2
+{
+	SGN2 A -1 Bright
+	Stop
+}
+
+state S_MGUN
+{
+	MGUN A -1 Bright
+	Stop
+}
+
+state S_LAUN
+{
+	LAUN A -1 Bright
+	Stop
+}
+
+state S_PLAS
+{
+	PLAS A -1 Bright
+	Stop
+}
+
+state S_BFUG
+{
+	BFUG A -1 Bright
+	Stop
+}
+
+#endif //EXT_DEATHMATCH
