@@ -7,8 +7,17 @@
 #include "classpath:decohack/mbf21.dh"
 #include "classpath:decohack/constants/friendly_things.dh"
 
+// ==============
+// defines -- load the extension defines early since
+// some things in main will branch via #ifdef a bit
+// ==============
+
 #include "main/defines.dh"
 #include "ext-deathmatch/defines.dh"
+
+// ==============
+// base stuff
+// ==============
 
 #include "main/info/ammo.dh"
 #include "main/info/strings.dh"
@@ -29,3 +38,11 @@
 #include "main/actors/items/health.dh"
 #include "main/actors/items/powerups.dh"
 #include "main/actors/items/weapons.dh"
+
+// ==============
+// extension overrides
+// ==============
+
+#include "ext-deathmatch/info/ammo.dh"
+
+#include "ext-deathmatch/actors/items/weapons.dh"

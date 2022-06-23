@@ -1,29 +1,11 @@
 /*****************************************************************************
- * vesper - decohack - AMMO FOR GUNS SHOOTING
+ * vesper - decohack - ext-deathmatch - AMMO FOR GUNS SHOOTING
  * (c) xaser acheron 2021
  *     MIT License
  ****************************************************************************/
 
 ammo AM_CLIP "Spikes"
 {
-	max 120
-	pickup 6
-}
-
-ammo AM_SHELL "Ion Cartridges"
-{
-	max 30
-	pickup 3
-}
-
-ammo AM_MISL "Nox Grenades"
-{
-	max 20
-	pickup 1
-}
-
-ammo AM_CELL "Ichor"
-{
-	max 150
-	pickup 15
+	max 160
+	pickup 8
 }
