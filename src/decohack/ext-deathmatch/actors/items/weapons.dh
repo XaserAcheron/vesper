@@ -4,44 +4,37 @@
  *     MIT License
  ****************************************************************************/
 
-state S_CSAW
+thing AxePickup
 {
-	CSAW A -1 Bright
-	Stop
+	state spawn thing AxePickup glow
 }
 
-state S_SHOT
+thing BlunderbussPickup
 {
-	SHOT A -1 Bright
-	Stop
+	state spawn thing BlunderbussPickup glow
 }
 
-state S_SHOT2
+thing HammerPickup
 {
-	SGN2 A -1 Bright
-	Stop
+	state spawn thing HammerPickup glow
 }
 
-state S_MGUN
+thing SpikerPickup
 {
-	MGUN A -1 Bright
-	Stop
+	state spawn thing SpikerPickup glow
 }
 
-state S_LAUN
+thing NoxPickup
 {
-	LAUN A -1 Bright
-	Stop
+	state spawn thing NoxPickup glow
 }
 
-state S_PLAS
+thing IchorPickup
 {
-	PLAS A -1 Bright
-	Stop
+	state spawn thing IchorPickup glow
 }
 
-state S_BFUG
+thing VilePickup
 {
-	BFUG A -1 Bright
-	Stop
+	state spawn thing VilePickup glow
 }

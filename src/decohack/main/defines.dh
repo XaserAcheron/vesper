@@ -42,6 +42,14 @@ alias weapon Vile        WP_BFG
 
 alias thing VesperPlayer MTF_PLAYER
 
+alias thing AxePickup         MTF_CHAINSAW
+alias thing BlunderbussPickup MTF_SHOTGUN
+alias thing HammerPickup      MTF_SUPERSHOTGUN
+alias thing SpikerPickup      MTF_CHAINGUN
+alias thing NoxPickup         MTF_ROCKETLAUNCHER
+alias thing IchorPickup       MTF_PLASMARIFLE
+alias thing VilePickup        MTF_BFG
+
 auto thing BlunderbussShot1 {}
 auto thing BlunderbussShot2 {}
 auto thing BlunderbussShot3 {}

@@ -4,4 +4,97 @@
  *     MIT License
  ****************************************************************************/
 
-// this space for rent
+// ==============
+// define some extra states for weapon pickups for use in extensions
+// ==============
+
+thing AxePickup "Axe Pickup"
+{
+	states
+	{
+	fullbright:
+		CSAW A -1 Bright
+		stop
+	glow:
+		CSAW BCDC 4 Bright
+		loop
+	}
+}
+
+thing BlunderbussPickup "Blunderbuss Pickup"
+{
+	states
+	{
+	fullbright:
+		SHOT A -1 Bright
+		stop
+	glow:
+		SHOT BCDC 4 Bright
+		loop
+	}
+}
+
+thing HammerPickup "Foe Hammer Pickup"
+{
+	states
+	{
+	fullbright:
+		SGN2 A -1 Bright
+		stop
+	glow:
+		SGN2 BCDC 4 Bright
+		loop
+	}
+}
+
+thing SpikerPickup "Heavy Spiker Pickup"
+{
+	states
+	{
+	fullbright:
+		MGUN A -1 Bright
+		stop
+	glow:
+		MGUN BCDC 4 Bright
+		loop
+	}
+}
+
+thing NoxPickup "Nox Launcher Pickup"
+{
+	states
+	{
+	fullbright:
+		LAUN A -1 Bright
+		stop
+	glow:
+		LAUN BCDC 4 Bright
+		loop
+	}
+}
+
+thing IchorPickup "Ichor Rifle Pickup"
+{
+	states
+	{
+	fullbright:
+		PLAS A -1 Bright
+		stop
+	glow:
+		PLAS BCDC 4 Bright
+		loop
+	}
+}
+
+thing VilePickup "Vile Driver Pickup"
+{
+	states
+	{
+	fullbright:
+		BFUG A -1 Bright
+		stop
+	glow:
+		BFUG BCDC 4 Bright
+		loop
+	}
+}
