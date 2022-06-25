@@ -43,6 +43,4 @@
 // extension overrides
 // ==============
 
-#include "ext-deathmatch/info/ammo.dh"
-
 #include "ext-deathmatch/actors/items/weapons.dh"
