@@ -114,6 +114,8 @@ When in doubt, give it a try! You may be surprised what works.
 
 v1.2.0
 - [WORK IN PROGRESS]
+- Polished up Vile Driver sprites with some new pixelwork & soul-vent anim
+- Improved Vile Driver sounds a bit to better suit the new sprites
 - Fixed some missing statusbar graphics
 - Updated a few weapon pickup sprites for better readability
 - Deathmatch Extension changes:
