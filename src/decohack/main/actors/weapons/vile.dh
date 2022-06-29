@@ -38,7 +38,7 @@ weapon Vile "Vile Driver"
 			BFGG F 1 A_WeaponSound(DSVIDDWN)
 			BFGG GHFGH 1
 			BFGG FGHFGHIJK 2
-			BFGG LM 3
+			BFGG LMN 3
 			goto ready
 		fire:
 			BFGF B 3 Offset(1, 32) A_WeaponSound(DSVIDUP)
@@ -72,6 +72,7 @@ weapon Vile "Vile Driver"
 			BFGF GHFGH 1
 			BFGF FGHFGHLMN 2
 			BFGF OP 3
+			BFGF QQQ 1 A_WeaponReady
 			goto able
 		flash:
 			TNT1 A 2 Bright A_Light1
