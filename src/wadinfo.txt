@@ -113,7 +113,6 @@ When in doubt, give it a try! You may be surprised what works.
 * Changelog *
 
 v1.2.0
-- [WORK IN PROGRESS]
 - Polished up Vile Driver sprites with some new pixelwork & soul-vent anim
 - Improved Vile Driver sounds a bit to better suit the new sprites
 - Fixed some missing statusbar graphics
@@ -122,6 +121,7 @@ v1.2.0
   - Ichor Rifle now "reloads" after every burst, so it's much less spammy
   - Heavy Spiker projectile speed increased slightly
   - Weapon pickups are now fullbright and have colored glowy outlines
+  - Axe now deals a flat 250 damage, one-shotting most fellow agents ;)
 
 v1.1.0
 - New Statusbar
