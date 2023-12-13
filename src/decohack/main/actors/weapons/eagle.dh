@@ -28,12 +28,11 @@ weapon Eagle "Vintage Eagle"
 			PISG A 1 A_Refire
 			goto ready
 		fire:
-			PISG A 0 A_GunFlash
 			PISG A 0 A_ConsumeAmmo
 			PISG A 0 A_WeaponSound(DSMAGNUM, 0)
-			PISG A 1 A_WeaponBulletAttack(MAGNUM_SPREAD, 0, 1, MAGNUM_DAMAGE)
-			PISG B 1
-			PISG B 1 Offset(1, 36)
+			PISG B 1 A_WeaponBulletAttack(MAGNUM_SPREAD, 0, 1, MAGNUM_DAMAGE)
+			PISG A 1 A_GunFlash
+			PISG A 1 Offset(1, 36)
 			PISG C 1 Offset(1, 44)
 			PISG C 1 Offset(1, 48)
 			PISG D 1 Offset(1, 50)
@@ -48,6 +47,8 @@ weapon Eagle "Vintage Eagle"
 			goto ready
 		flash:
 			PISF A 2 Bright A_Light1
-			goto lightdone
+			PISF B 2 Bright A_Light0
+			PISF C 2 Bright
+			stop
 	}
 }
