@@ -112,6 +112,10 @@ When in doubt, give it a try! You may be surprised what works.
 ===========================================================================
 * Changelog *
 
+v1.3.0
+- [WORK IN PROGRESS]
+- New and improved Vintage Eagle sprites, by TypicalSF (sonik.o.fan)
+
 v1.2.0
 - Polished up Vile Driver sprites with some new pixelwork & soul-vent anim
 - Improved Vile Driver sounds a bit to better suit the new sprites
